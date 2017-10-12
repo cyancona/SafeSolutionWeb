@@ -1,0 +1,26 @@
+﻿body{
+    font-size:11px;
+}
+
+.panEvaluacion {
+    background-color: white;
+    border: 1px dashed #421d52;
+    width:100% auto;
+}
+
+table .formEvaluacion{
+    border: 1px solid black;
+    font-size:10px !important;
+}
+
+table .formEvaluacion th,table .formEvaluacion td,table .formEvaluacion tr {
+    border: 1px solid gray;
+}
+
+.CodRegistro {
+    width:15px;
+}
+
+.PEPersonal {
+    margin-left:29px; 
+}

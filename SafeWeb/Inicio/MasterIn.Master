@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterIn.master.cs" Inherits="SafeWeb.Inicio.MasterIn" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../Estilos/Inicio.css" />
+<link rel="stylesheet" type="text/css" href="../Estilos/CommonCss.css" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:Panel ID="Cabecera" runat="server" CssClass="centro cabecera">
+            <img src="../Images/SafePrevencion-recuperado.png" 
+                        style="width:80px; margin:1.2em;" class="der imgSafeP" />
+                    <asp:Menu ID="Menu1" runat="server" BackColor="#E3EAEB" DataSourceID="MapaInicio" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#666666" StaticSubMenuIndent="10px">
+                        <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicMenuStyle BackColor="#E3EAEB" />
+                        <DynamicSelectedStyle BackColor="#1C5E55" />
+                        <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticSelectedStyle BackColor="#1C5E55" />
+                    </asp:Menu>
+                    <asp:SiteMapDataSource ID="MapaInicio" runat="server" />
+        </asp:Panel>
+        <asp:Panel ID="Contenido" runat="server" CssClass="centro">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                    </asp:ContentPlaceHolder>
+        </asp:Panel>
+        <asp:Panel ID="Pie" runat="server" CssClass="centro limpio pieFooter" >
+                    Pie
+        </asp:Panel>
+    </form>
+</body>
+</html>

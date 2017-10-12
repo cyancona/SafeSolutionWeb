@@ -1,0 +1,63 @@
+﻿.contenido{
+    margin:0 auto;
+    padding:10px;
+    text-align:center;
+}
+
+.txaDescripcion{
+    background-color:lightskyblue;
+    overflow:hidden;
+    resize:none;
+    text-align:end;
+    -ms-overflow-style:none;
+    width:100% auto;
+}
+
+img #imgSafe {
+    max-width: 30px;
+}
+
+/*.tablaContenido{
+    width: 100%;
+    height: 281px;
+    margin-left:10px;
+    margin-right:10px;
+}*/
+
+.calendario {
+    width:50%;
+}
+
+tr{
+    padding:10px;
+}
+
+td {
+    padding:20px;
+}
+
+ .saludoBienvenida {
+    font-size:70%;
+}
+
+.RegistroUser .RegistroEmp {
+    margin:0 auto;
+    align-content:center !important;
+    text-align:center !important;
+}
+
+.TipoUser {
+    float:left;
+    padding:15px;
+}
+
+.RegistroFo {
+    margin:0 auto;
+    width:450px;
+    height:100% auto;
+    text-align:left;
+}
+
+.central{
+    float:none;
+}

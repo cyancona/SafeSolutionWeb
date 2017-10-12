@@ -1,0 +1,23 @@
+﻿*{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color:#40a7a3;
+}
+
+.content {
+    width:350px auto;
+}
+
+.listadoVisitas {
+    width: 350px auto;
+}
+
+.grdVisitas {
+    background-color:white;
+}
+
+.listadoVisitas {
+    margin: 50px
+}

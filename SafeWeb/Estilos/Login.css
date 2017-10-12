@@ -1,0 +1,12 @@
+﻿table{
+    border:dashed 1px black;
+}
+
+td {
+    border:dashed 1px lightgray;
+    padding:10px;
+}
+
+margen_panel {
+    margin:2em;
+}
