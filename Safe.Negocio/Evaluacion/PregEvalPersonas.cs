@@ -23,12 +23,12 @@ namespace Safe.Negocio.Evaluacion
 
         public string Serializar()
         {
-            return CommonBC.Serializar(this);
+            return ClaseComun.Serializar(this);
         }
 
         public static PregEvalPersonas Deserializar(string json)
         {
-            return (PregEvalPersonas)CommonBC.Deserializar<PregEvalPersonas>(json);
+            return (PregEvalPersonas)ClaseComun.Deserializar<PregEvalPersonas>(json);
         }
     }
 }

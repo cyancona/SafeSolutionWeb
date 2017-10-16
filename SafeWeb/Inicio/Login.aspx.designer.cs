@@ -7,8 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SafeWeb
-{
+namespace SafeWeb {
     
     
     public partial class Login {
@@ -23,39 +22,12 @@ namespace SafeWeb
         protected global::System.Web.UI.WebControls.Panel PanelLogin;
         
         /// <summary>
-        /// Control txtUsername.
+        /// Control loginUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsername;
-        
-        /// <summary>
-        /// Control txtPassword.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
-        
-        /// <summary>
-        /// Control ddRol.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddRol;
-        
-        /// <summary>
-        /// Control btnInicia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnInicia;
+        protected global::System.Web.UI.WebControls.Login loginUsuario;
     }
 }

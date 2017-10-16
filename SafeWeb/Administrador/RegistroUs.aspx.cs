@@ -1,31 +1,36 @@
 ﻿using Safe.Negocio;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
-namespace SafeWeb
+namespace SafeWeb.Administrador
 {
-    public partial class Registro : System.Web.UI.Page
+    public partial class RegistroUs : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                clNacimiento.Visible = false;
                 OtrosPn.Visible = true;
-                TipoUser.SelectedIndex = 1;
+                TipoUser.SelectedIndex = 0;
             }
         }
 
         protected void btnRegUser_Click(object sender, EventArgs e)
         {
+            //https://www.youtube.com/watch?v=24hIhS2itUU
             int num = int.Parse(TipoUser.SelectedValue);
+
             switch (num)
-            { 
+            {
                 case 4: //------------Expositor
                     try
                     {
                         /*Falta 
-                         * Expositor exp = new Expositor();
+                        Expositor exp = new Expositor();
                         exp.Nombre = txtNomuser.Text;
                         exp.ApPaterno = txtAppaterno.Text;
                         exp.ApMaterno = txtApMaterno.Text;
@@ -36,7 +41,7 @@ namespace SafeWeb
                     }
                     catch (Exception er)
                     {
-                        lblError.Text = "Existe un error de conversion" + er.Message;
+                        lblError.Text = "Existe un error de conversion." + er.Message;
                     }
                     /*Direccion y comuna faltan ahi pero no son disponibles para este usuario*/
                     break;
@@ -45,7 +50,7 @@ namespace SafeWeb
                     try
                     {
                         /* Falta
-                         * Medico med = new Medico(); 
+                        Medico med = new Medico(); 
                         med.Nombre = txtNomuser.Text;
                         med.ApPaterno = txtAppaterno.Text;
                         med.ApMaterno = txtApMaterno.Text;
@@ -57,9 +62,8 @@ namespace SafeWeb
                     }
                     catch (Exception er)
                     {
-                        lblError.Text = "Existe un error de conversion "+er.Message;
+                        lblError.Text = "Existe un error de conversion " + er.Message;
                     }
-                    /*Direccion y comuna faltan ahi pero no son disponibles para este usuario*/
                     /*Direccion y comuna faltan ahi pero no son disponibles para este usuario*/
                     break;
 
@@ -85,29 +89,12 @@ namespace SafeWeb
                     }
                     catch (Exception er)
                     {
-                        lblError.Text = "Existe un error de conversion" + er.Message;
+                        lblError.Text = "Existe un error de conversion. " + er.Message;
                     }
                     break;
             }
         }
-
-        protected void imgCalendar_Click(object sender, ImageClickEventArgs e)
-        {
-            if (clNacimiento.Visible == false)
-            {
-                clNacimiento.Visible = true;
-            }
-            else
-            {
-                clNacimiento.Visible = false;
-            }
-        }
-
-        protected void clNacimiento_SelectionChanged(object sender, EventArgs e)
-        {
-            txtNacimiento.Text = clNacimiento.SelectedDate.ToShortDateString();
-        }
-
+        
         protected void TipoUser_SelectedIndexChanged(object sender, EventArgs e)
         {
             int num = int.Parse(TipoUser.SelectedValue);
@@ -118,11 +105,9 @@ namespace SafeWeb
                     break;
                 case 5:
                     OtrosPn.Visible = false; OtrosPn.Enabled = false;
-                    EspecialidadPn.Visible = true; EspecialidadPn.Enabled = true;
                     break;
                 default:
                     OtrosPn.Visible = true; OtrosPn.Enabled = true;
-                    EspecialidadPn.Visible = false; EspecialidadPn.Enabled = false;
                     txtNacimiento.Enabled = true;
                     break;
             }

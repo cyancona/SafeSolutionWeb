@@ -13,6 +13,15 @@ namespace SafeWeb.Medico {
     public partial class MedCalendario {
         
         /// <summary>
+        /// Control ScriptManager1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
         /// Control Contenido.
         /// </summary>
         /// <remarks>
@@ -22,13 +31,13 @@ namespace SafeWeb.Medico {
         protected global::System.Web.UI.WebControls.Panel Contenido;
         
         /// <summary>
-        /// Control CalendarVisitas.
+        /// Control CalendarVisitaMedica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar CalendarVisitas;
+        protected global::System.Web.UI.WebControls.Calendar CalendarVisitaMedica;
         
         /// <summary>
         /// Control ListVisitasM.
@@ -56,14 +65,5 @@ namespace SafeWeb.Medico {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel FilaVisitasM;
-        
-        /// <summary>
-        /// Control SubListado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload SubListado;
     }
 }

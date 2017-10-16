@@ -3,7 +3,5 @@
   <siteMapNode url="" title="Menu Navegable"  description="">
     <siteMapNode url="/Inicio/Inicio.aspx" title="Inicio"  description="" />
     <siteMapNode url="/Inicio/Login.aspx" title="Login"  description="" />
-    <siteMapNode url="/Inicio/Registro.aspx" title="Registro usuario"  description="" />
-    <siteMapNode url="/Inicio/RegEmpresa.aspx" title="Registro Empresa"  description="" />
   </siteMapNode>
 </siteMap>

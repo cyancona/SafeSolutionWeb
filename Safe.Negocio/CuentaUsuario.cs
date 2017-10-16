@@ -8,10 +8,11 @@ namespace Safe.Negocio
 {
     public class CuentaUsuario
     {
+        public int id { get; set; }
         public string username { get; set; }
         public string password { get; set; }
         public int habilitado { get; set; }
-        public int rolId { get; set; }
+        public int rol { get; set; }
 
         public CuentaUsuario()
         {
@@ -23,17 +24,17 @@ namespace Safe.Negocio
             this.username = string.Empty;
             this.password = string.Empty;
             this.habilitado = 0;
-            this.rolId = 0;
+            this.rol = 0;
         }
 
         public string Serializar()
         {
-            return CommonBC.Serializar(this);
+            return ClaseComun.Serializar(this);
         }
 
         public static CuentaUsuario Deserializar(string json)
         {
-            return (CuentaUsuario)CommonBC.Deserializar<CuentaUsuario>(json);
+            return (CuentaUsuario)ClaseComun.Deserializar<CuentaUsuario>(json);
         }
     }
 }

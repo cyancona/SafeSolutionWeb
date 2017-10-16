@@ -29,12 +29,12 @@ namespace Safe.Negocio.Direccion
 
         public string Serializar()
         {
-            return CommonBC.Serializar(this);
+            return ClaseComun.Serializar(this);
         }
 
         public static Region Deserializar(string json)
         {
-            return (Region)CommonBC.Deserializar<Region>(json);
+            return (Region)ClaseComun.Deserializar<Region>(json);
         }
     }
 }

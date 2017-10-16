@@ -30,12 +30,12 @@ namespace Safe.Negocio
 
         public string Serializar()
         {
-            return CommonBC.Serializar(this);
+            return ClaseComun.Serializar(this);
         }
 
         public static Alumno Deserializar(string json)
         {
-            return (Alumno)CommonBC.Deserializar<Alumno>(json);
+            return (Alumno)ClaseComun.Deserializar<Alumno>(json);
         }
 
     }

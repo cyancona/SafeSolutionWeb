@@ -40,22 +40,13 @@ namespace SafeSol.Tecnico {
         protected global::System.Web.UI.WebControls.Panel Cabecera;
         
         /// <summary>
-        /// Control Menu1.
+        /// Control imgLogout.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu Menu1;
-        
-        /// <summary>
-        /// Control MapaInicio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SiteMapDataSource MapaInicio;
+        protected global::System.Web.UI.WebControls.ImageButton imgLogout;
         
         /// <summary>
         /// Control Contenido.

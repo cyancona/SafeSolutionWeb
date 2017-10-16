@@ -8,7 +8,7 @@ using Newtonsoft.Json.Converters;
 
 namespace Safe.Negocio
 {
-    public class CommonBC
+    public class ClaseComun
     {
         public static string Serializar(object ob)
         {

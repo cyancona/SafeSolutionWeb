@@ -37,12 +37,12 @@ namespace Safe.Negocio.Evaluacion
 
         public string Serializar()
         {
-            return CommonBC.Serializar(this);
+            return ClaseComun.Serializar(this);
         }
 
         public static RespEvalEmpresa Deserializar(string json)
         {
-            return (RespEvalEmpresa)CommonBC.Deserializar<RespEvalEmpresa>(json);
+            return (RespEvalEmpresa)ClaseComun.Deserializar<RespEvalEmpresa>(json);
         }
     }
 }

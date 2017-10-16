@@ -7,10 +7,19 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SafeWeb {
+namespace SafeWeb.Administrador {
     
     
-    public partial class Registro {
+    public partial class RegistroUs {
+        
+        /// <summary>
+        /// Control ScriptManager1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
         /// Control RegistroUsuario.
@@ -112,22 +121,13 @@ namespace SafeWeb {
         protected global::System.Web.UI.WebControls.TextBox txtNacimiento;
         
         /// <summary>
-        /// Control imgCalendar.
+        /// Control txtNacimiento_CalendarExtender.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgCalendar;
-        
-        /// <summary>
-        /// Control clNacimiento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar clNacimiento;
+        protected global::AjaxControlToolkit.CalendarExtender txtNacimiento_CalendarExtender;
         
         /// <summary>
         /// Control RbSexUser.
@@ -164,15 +164,6 @@ namespace SafeWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
-        
-        /// <summary>
-        /// Control EspecialidadPn.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel EspecialidadPn;
         
         /// <summary>
         /// Control btnRegUser.

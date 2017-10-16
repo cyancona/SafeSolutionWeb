@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterAdm.master.cs" Inherits="SafeWeb.Administrador.MasterAdm" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../Estilos/Inicio.css" />
+<link rel="stylesheet" type="text/css" href="../Estilos/CommonCss.css" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:Panel ID="Cabecera" runat="server" CssClass="centro cabecera">
+            <img src="../Images/SafePrevencion-recuperado.png" 
+                        style="width:80px; margin:1.2em;" class="der imgSafeP" />
+            <asp:ImageButton ID="imgLogout" runat="server" ImageUrl="~/Images/Logout-icon.png" Width="30px" CssClass="der" OnClick="imgLogout_Click"/>
+        </asp:Panel>
+        <asp:Panel ID="Contenido" runat="server" CssClass="centro">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                    </asp:ContentPlaceHolder>
+        </asp:Panel>
+        <asp:Panel ID="Pie" runat="server" CssClass="centro limpio pieFooter" >
+                    Pie
+        </asp:Panel>
+    </form>
+</body>
+</html>
+

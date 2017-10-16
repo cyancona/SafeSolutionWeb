@@ -27,12 +27,12 @@ namespace Safe.Negocio.Direccion
 
         public string Serializar()
         {
-            return CommonBC.Serializar(this);
+            return ClaseComun.Serializar(this);
         }
 
         public static Provincia Deserializar(string json)
         {
-            return (Provincia)CommonBC.Deserializar<Provincia>(json);
+            return (Provincia)ClaseComun.Deserializar<Provincia>(json);
         }
     }
 }

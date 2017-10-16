@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=17.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.17.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -80,6 +84,8 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -98,13 +104,37 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Administrador\InicioAdministrador.aspx" />
+    <Content Include="Administrador\RegistroUs.aspx" />
+    <Content Include="Images\Logout-icon.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Inicio\MasterIn.Master" />
     <Content Include="Medico\MasterMed.Master" />
+    <Content Include="Administrador\MasterAdm.Master" />
+    <Content Include="Alumno\MasterAlum.Master" />
+    <Content Include="Expositor\MasterExp.Master" />
+    <Content Include="Empresa\MasterEmp.Master" />
+    <None Include="Service References\Comunicacion\configuration91.svcinfo" />
+    <None Include="Service References\Comunicacion\configuration.svcinfo" />
+    <None Include="Service References\Comunicacion\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Tecnico\MasterTec.Master" />
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.InsertCuentaUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.UpdateCuentaUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.ValidarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\Comunicacion\ServicioComunicacion.wsdl" />
+    <Content Include="Trabajador\MasterTrab.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -125,8 +155,7 @@
     <Content Include="Images\upFile.png" />
     <Content Include="Inicio\Inicio.aspx" />
     <Content Include="Inicio\Login.aspx" />
-    <Content Include="Inicio\RegEmpresa.aspx" />
-    <Content Include="Inicio\Registro.aspx" />
+    <Content Include="Administrador\RegistroEmp.aspx" />
     <Content Include="Medico\MedCalendario.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
@@ -135,6 +164,50 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador\InicioAdministrador.aspx.cs">
+      <DependentUpon>InicioAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\InicioAdministrador.aspx.designer.cs">
+      <DependentUpon>InicioAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\MasterAdm.Master.cs">
+      <DependentUpon>MasterAdm.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\MasterAdm.Master.designer.cs">
+      <DependentUpon>MasterAdm.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\RegistroUs.aspx.cs">
+      <DependentUpon>RegistroUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\RegistroUs.aspx.designer.cs">
+      <DependentUpon>RegistroUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumno\MasterAlum.Master.cs">
+      <DependentUpon>MasterAlum.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alumno\MasterAlum.Master.designer.cs">
+      <DependentUpon>MasterAlum.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ClaseComun\Redireccion.cs" />
+    <Compile Include="ClaseComun\SessionHelper.cs" />
+    <Compile Include="Empresa\MasterEmp.Master.cs">
+      <DependentUpon>MasterEmp.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empresa\MasterEmp.Master.designer.cs">
+      <DependentUpon>MasterEmp.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Expositor\MasterExp.Master.cs">
+      <DependentUpon>MasterExp.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expositor\MasterExp.Master.designer.cs">
+      <DependentUpon>MasterExp.Master</DependentUpon>
+    </Compile>
     <Compile Include="Inicio\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -156,19 +229,12 @@
     <Compile Include="Inicio\MasterIn.Master.designer.cs">
       <DependentUpon>MasterIn.Master</DependentUpon>
     </Compile>
-    <Compile Include="Inicio\RegEmpresa.aspx.cs">
-      <DependentUpon>RegEmpresa.aspx</DependentUpon>
+    <Compile Include="Administrador\RegistroEmp.aspx.cs">
+      <DependentUpon>RegistroEmp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Inicio\RegEmpresa.aspx.designer.cs">
-      <DependentUpon>RegEmpresa.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Inicio\Registro.aspx.cs">
-      <DependentUpon>Registro.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Inicio\Registro.aspx.designer.cs">
-      <DependentUpon>Registro.aspx</DependentUpon>
+    <Compile Include="Administrador\RegistroEmp.aspx.designer.cs">
+      <DependentUpon>RegistroEmp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Medico\MasterMed.Master.cs">
       <DependentUpon>MasterMed.Master</DependentUpon>
@@ -185,6 +251,11 @@
       <DependentUpon>MedCalendario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Comunicacion\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Tecnico\EvaluacionPersonal.aspx.cs">
       <DependentUpon>EvaluacionPersonal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -206,16 +277,28 @@
     <Compile Include="Tecnico\MasterTec.Master.designer.cs">
       <DependentUpon>MasterTec.Master</DependentUpon>
     </Compile>
+    <Compile Include="Trabajador\MasterTrab.Master.cs">
+      <DependentUpon>MasterTrab.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Trabajador\MasterTrab.Master.designer.cs">
+      <DependentUpon>MasterTrab.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Supervisor\" />
-    <Folder Include="Trabajador\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Safe.Negocio\Safe.Negocio.csproj">
       <Project>{965DE076-BF19-4A1B-A239-5035D3A424CD}</Project>
       <Name>Safe.Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Comunicacion\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

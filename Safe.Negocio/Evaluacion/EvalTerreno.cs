@@ -25,12 +25,12 @@ namespace Safe.Negocio.Evaluacion
 
         public string Serializar()
         {
-            return CommonBC.Serializar(this);
+            return ClaseComun.Serializar(this);
         }
 
         public static EvalTerreno Deserializar(string json)
         {
-            return (EvalTerreno)CommonBC.Deserializar<EvalTerreno>(json);
+            return (EvalTerreno)ClaseComun.Deserializar<EvalTerreno>(json);
         }
     }
 }

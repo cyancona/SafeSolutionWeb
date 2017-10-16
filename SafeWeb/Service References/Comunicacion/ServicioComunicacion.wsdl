@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ax21="http://io.java/xsd" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://service" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://io.java/xsd">
+      <xs:complexType name="IOException">
+        <xs:sequence />
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:ax22="http://io.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://service">
+      <xs:import namespace="http://io.java/xsd" />
+      <xs:element name="ServicioComunicacionIOException">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="IOException" nillable="true" type="ax22:IOException" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidarUsuario">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuarioJson" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidarUsuarioResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateCuentaUsuario">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuarioJson" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateCuentaUsuarioResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertCuentaUsuario">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuarioJson" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertCuentaUsuarioResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateCuentaUsuarioRequest">
+    <wsdl:part name="parameters" element="ns:UpdateCuentaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCuentaUsuarioResponse">
+    <wsdl:part name="parameters" element="ns:UpdateCuentaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComunicacionIOException">
+    <wsdl:part name="parameters" element="ns:ServicioComunicacionIOException" />
+  </wsdl:message>
+  <wsdl:message name="InsertCuentaUsuarioRequest">
+    <wsdl:part name="parameters" element="ns:InsertCuentaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="InsertCuentaUsuarioResponse">
+    <wsdl:part name="parameters" element="ns:InsertCuentaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioRequest">
+    <wsdl:part name="parameters" element="ns:ValidarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioResponse">
+    <wsdl:part name="parameters" element="ns:ValidarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioComunicacionPortType">
+    <wsdl:operation name="UpdateCuentaUsuario">
+      <wsdl:input wsaw:Action="urn:UpdateCuentaUsuario" message="ns:UpdateCuentaUsuarioRequest" />
+      <wsdl:output wsaw:Action="urn:UpdateCuentaUsuarioResponse" message="ns:UpdateCuentaUsuarioResponse" />
+      <wsdl:fault wsaw:Action="urn:UpdateCuentaUsuarioServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaUsuario">
+      <wsdl:input wsaw:Action="urn:InsertCuentaUsuario" message="ns:InsertCuentaUsuarioRequest" />
+      <wsdl:output wsaw:Action="urn:InsertCuentaUsuarioResponse" message="ns:InsertCuentaUsuarioResponse" />
+      <wsdl:fault wsaw:Action="urn:InsertCuentaUsuarioServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <wsdl:input wsaw:Action="urn:ValidarUsuario" message="ns:ValidarUsuarioRequest" />
+      <wsdl:output wsaw:Action="urn:ValidarUsuarioResponse" message="ns:ValidarUsuarioResponse" />
+      <wsdl:fault wsaw:Action="urn:ValidarUsuarioServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioComunicacionSoap11Binding" type="ns:ServicioComunicacionPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateCuentaUsuario">
+      <soap:operation soapAction="urn:UpdateCuentaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaUsuario">
+      <soap:operation soapAction="urn:InsertCuentaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <soap:operation soapAction="urn:ValidarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioComunicacionSoap12Binding" type="ns:ServicioComunicacionPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateCuentaUsuario">
+      <soap12:operation soapAction="urn:UpdateCuentaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaUsuario">
+      <soap12:operation soapAction="urn:InsertCuentaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <soap12:operation soapAction="urn:ValidarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioComunicacionHttpBinding" type="ns:ServicioComunicacionPortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="UpdateCuentaUsuario">
+      <http:operation location="UpdateCuentaUsuario" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaUsuario">
+      <http:operation location="InsertCuentaUsuario" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <http:operation location="ValidarUsuario" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioComunicacion">
+    <wsdl:port name="ServicioComunicacionHttpSoap11Endpoint" binding="ns:ServicioComunicacionSoap11Binding">
+      <soap:address location="http://localhost:8080/ComunicacionWS/services/ServicioComunicacion.ServicioComunicacionHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="ServicioComunicacionHttpSoap12Endpoint" binding="ns:ServicioComunicacionSoap12Binding">
+      <soap12:address location="http://localhost:8080/ComunicacionWS/services/ServicioComunicacion.ServicioComunicacionHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="ServicioComunicacionHttpEndpoint" binding="ns:ServicioComunicacionHttpBinding">
+      <http:address location="http://localhost:8080/ComunicacionWS/services/ServicioComunicacion.ServicioComunicacionHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

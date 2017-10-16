@@ -47,12 +47,12 @@ namespace Safe.Negocio
 
         public string Serializar()
         {
-            return CommonBC.Serializar(this);
+            return ClaseComun.Serializar(this);
         }
 
         public static Empleado Deserializar(string json)
         {
-            return (Empleado)CommonBC.Deserializar<Empleado>(json);
+            return (Empleado)ClaseComun.Deserializar<Empleado>(json);
         }
     }
 
