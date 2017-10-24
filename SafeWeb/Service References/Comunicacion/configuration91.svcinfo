@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="wuHwnQ0RxmukITFk5uK8K3Y4ecc=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="PclOWWCTXH5i/OY2ea6QuTlkn2Y=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ServicioComunicacionSoap11Binding">
       <properties>
@@ -263,10 +263,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ServicioComunicacionHttpSoap11Endpoint" contract="Comunicacion.ServicioComunicacionPortType" bindingType="basicHttpBinding" address="http://localhost:8080/ComunicacionWS/services/ServicioComunicacion.ServicioComunicacionHttpSoap11Endpoint/" bindingConfiguration="ServicioComunicacionSoap11Binding">
+    <endpoint name="ServicioComunicacionHttpSoap11Endpoint" contract="Comunicacion.ServicioComunicacionPortType" bindingType="basicHttpBinding" address="http://192.168.0.38:8081/ComunicacionWS/services/ServicioComunicacion.ServicioComunicacionHttpSoap11Endpoint/" bindingConfiguration="ServicioComunicacionSoap11Binding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8080/ComunicacionWS/services/ServicioComunicacion.ServicioComunicacionHttpSoap11Endpoint/</serializedValue>
+          <serializedValue>http://192.168.0.38:8081/ComunicacionWS/services/ServicioComunicacion.ServicioComunicacionHttpSoap11Endpoint/</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -348,10 +348,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="ServicioComunicacionHttpSoap12Endpoint" contract="Comunicacion.ServicioComunicacionPortType" bindingType="customBinding" address="http://localhost:8080/ComunicacionWS/services/ServicioComunicacion.ServicioComunicacionHttpSoap12Endpoint/" bindingConfiguration="ServicioComunicacionSoap12Binding">
+    <endpoint name="ServicioComunicacionHttpSoap12Endpoint" contract="Comunicacion.ServicioComunicacionPortType" bindingType="customBinding" address="http://192.168.0.38:8081/ComunicacionWS/services/ServicioComunicacion.ServicioComunicacionHttpSoap12Endpoint/" bindingConfiguration="ServicioComunicacionSoap12Binding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8080/ComunicacionWS/services/ServicioComunicacion.ServicioComunicacionHttpSoap12Endpoint/</serializedValue>
+          <serializedValue>http://192.168.0.38:8081/ComunicacionWS/services/ServicioComunicacion.ServicioComunicacionHttpSoap12Endpoint/</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

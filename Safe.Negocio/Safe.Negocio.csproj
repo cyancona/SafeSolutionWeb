@@ -45,11 +45,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alumno.cs" />
-    <Compile Include="CommonBC.cs" />
+    <Compile Include="ClaseComun.cs" />
     <Compile Include="CuentaUsuario.cs" />
     <Compile Include="Direccion\Comuna.cs" />
+    <Compile Include="Direccion\ComunaCollection.cs" />
     <Compile Include="Direccion\Provincia.cs" />
+    <Compile Include="Direccion\ProvinciaCollection.cs" />
     <Compile Include="Direccion\Region.cs" />
+    <Compile Include="Direccion\RegionCollection.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="Evaluacion\DetEvaluacion.cs" />
@@ -59,8 +62,11 @@
     <Compile Include="Evaluacion\RespEvalEmpresa.cs" />
     <Compile Include="Evaluacion\RespEvalPersonas.cs" />
     <Compile Include="Evaluacion\RiesgoEvalEmpresa.cs" />
+    <Compile Include="Expositor.cs" />
+    <Compile Include="Medico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rol.cs" />
+    <Compile Include="RolCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

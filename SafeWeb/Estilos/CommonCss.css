@@ -17,6 +17,10 @@ body {
     float:left;
 }
 
+.letterizq{
+    text-align:left !important;
+}
+
 .der {
     float:right;
 }

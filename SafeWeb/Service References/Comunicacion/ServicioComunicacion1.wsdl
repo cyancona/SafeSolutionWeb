@@ -1,0 +1,1401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ax21="http://io.java/xsd" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://service" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://io.java/xsd">
+      <xs:complexType name="IOException">
+        <xs:sequence />
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:ax22="http://io.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://service">
+      <xs:import namespace="http://io.java/xsd" />
+      <xs:element name="ServicioComunicacionIOException">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="IOException" nillable="true" type="ax22:IOException" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidarUsuario">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuarioJson" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidarUsuarioResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateEmpresa">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="empresaJson" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateEmpresaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateEmpleado">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="empleadoJson" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateEmpleadoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateCurso">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="cursoJson" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateCursoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateCuentaUsuario">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuarioJson" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateCuentaUsuarioResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadRoles">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadRolesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadRegiones">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadRegionesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadProvincias">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="idRegion" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadProvinciasResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadPlanByRutEmpresa">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rutEmpresa" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadPlanByRutEmpresaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadEmpresaByIdCuentaUsuario">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="idCuentaUsuario" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadEmpresaByIdCuentaUsuarioResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadEmpleadoByEmpresa">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rutEmpresa" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadEmpleadoByEmpresaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadCursoByIdPlan">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="idPlanCapacitacion" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadCursoByIdPlanResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadCuentaUsuarioByRol">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="idRol" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadCuentaUsuarioByRolResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadComunas">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="idProvincia" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadComunasResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertPlanCapacitacion">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="planJson" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertPlanCapacitacionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertEmpresa">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="empresaJson" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertEmpresaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertEmpleado">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="empleadoJson" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertEmpleadoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertCurso">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="cursoJson" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertCursoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertCuentaUsuario">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="usuarioJson" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertCuentaUsuarioResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertAlumno">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="alumnoJson" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InsertAlumnoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteEmpresa">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rutEmpresa" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteEmpresaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteEmpleado">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="rutEmpleado" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteEmpleadoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteCuentaUsuario">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="idCuentaUsuario" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteCuentaUsuarioResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ReadCuentaUsuarioByRolRequest">
+    <wsdl:part name="parameters" element="ns:ReadCuentaUsuarioByRol" />
+  </wsdl:message>
+  <wsdl:message name="ReadCuentaUsuarioByRolResponse">
+    <wsdl:part name="parameters" element="ns:ReadCuentaUsuarioByRolResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicioComunicacionIOException">
+    <wsdl:part name="parameters" element="ns:ServicioComunicacionIOException" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEmpresaRequest">
+    <wsdl:part name="parameters" element="ns:DeleteEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEmpresaResponse">
+    <wsdl:part name="parameters" element="ns:DeleteEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCursoRequest">
+    <wsdl:part name="parameters" element="ns:UpdateCurso" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCursoResponse">
+    <wsdl:part name="parameters" element="ns:UpdateCursoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCuentaUsuarioRequest">
+    <wsdl:part name="parameters" element="ns:DeleteCuentaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCuentaUsuarioResponse">
+    <wsdl:part name="parameters" element="ns:DeleteCuentaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCuentaUsuarioRequest">
+    <wsdl:part name="parameters" element="ns:UpdateCuentaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCuentaUsuarioResponse">
+    <wsdl:part name="parameters" element="ns:UpdateCuentaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadProvinciasRequest">
+    <wsdl:part name="parameters" element="ns:ReadProvincias" />
+  </wsdl:message>
+  <wsdl:message name="ReadProvinciasResponse">
+    <wsdl:part name="parameters" element="ns:ReadProvinciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmpleadoRequest">
+    <wsdl:part name="parameters" element="ns:InsertEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmpleadoResponse">
+    <wsdl:part name="parameters" element="ns:InsertEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmpresaRequest">
+    <wsdl:part name="parameters" element="ns:InsertEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmpresaResponse">
+    <wsdl:part name="parameters" element="ns:InsertEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmpresaRequest">
+    <wsdl:part name="parameters" element="ns:UpdateEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmpresaResponse">
+    <wsdl:part name="parameters" element="ns:UpdateEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertPlanCapacitacionRequest">
+    <wsdl:part name="parameters" element="ns:InsertPlanCapacitacion" />
+  </wsdl:message>
+  <wsdl:message name="InsertPlanCapacitacionResponse">
+    <wsdl:part name="parameters" element="ns:InsertPlanCapacitacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertAlumnoRequest">
+    <wsdl:part name="parameters" element="ns:InsertAlumno" />
+  </wsdl:message>
+  <wsdl:message name="InsertAlumnoResponse">
+    <wsdl:part name="parameters" element="ns:InsertAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadCursoByIdPlanRequest">
+    <wsdl:part name="parameters" element="ns:ReadCursoByIdPlan" />
+  </wsdl:message>
+  <wsdl:message name="ReadCursoByIdPlanResponse">
+    <wsdl:part name="parameters" element="ns:ReadCursoByIdPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEmpleadoRequest">
+    <wsdl:part name="parameters" element="ns:DeleteEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEmpleadoResponse">
+    <wsdl:part name="parameters" element="ns:DeleteEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadEmpresaByIdCuentaUsuarioRequest">
+    <wsdl:part name="parameters" element="ns:ReadEmpresaByIdCuentaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ReadEmpresaByIdCuentaUsuarioResponse">
+    <wsdl:part name="parameters" element="ns:ReadEmpresaByIdCuentaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmpleadoRequest">
+    <wsdl:part name="parameters" element="ns:UpdateEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmpleadoResponse">
+    <wsdl:part name="parameters" element="ns:UpdateEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadEmpleadoByEmpresaRequest">
+    <wsdl:part name="parameters" element="ns:ReadEmpleadoByEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="ReadEmpleadoByEmpresaResponse">
+    <wsdl:part name="parameters" element="ns:ReadEmpleadoByEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadComunasRequest">
+    <wsdl:part name="parameters" element="ns:ReadComunas" />
+  </wsdl:message>
+  <wsdl:message name="ReadComunasResponse">
+    <wsdl:part name="parameters" element="ns:ReadComunasResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCuentaUsuarioRequest">
+    <wsdl:part name="parameters" element="ns:InsertCuentaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="InsertCuentaUsuarioResponse">
+    <wsdl:part name="parameters" element="ns:InsertCuentaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioRequest">
+    <wsdl:part name="parameters" element="ns:ValidarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioResponse">
+    <wsdl:part name="parameters" element="ns:ValidarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCursoRequest">
+    <wsdl:part name="parameters" element="ns:InsertCurso" />
+  </wsdl:message>
+  <wsdl:message name="InsertCursoResponse">
+    <wsdl:part name="parameters" element="ns:InsertCursoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadPlanByRutEmpresaRequest">
+    <wsdl:part name="parameters" element="ns:ReadPlanByRutEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="ReadPlanByRutEmpresaResponse">
+    <wsdl:part name="parameters" element="ns:ReadPlanByRutEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadRolesRequest">
+    <wsdl:part name="parameters" element="ns:ReadRoles" />
+  </wsdl:message>
+  <wsdl:message name="ReadRolesResponse">
+    <wsdl:part name="parameters" element="ns:ReadRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadRegionesRequest">
+    <wsdl:part name="parameters" element="ns:ReadRegiones" />
+  </wsdl:message>
+  <wsdl:message name="ReadRegionesResponse">
+    <wsdl:part name="parameters" element="ns:ReadRegionesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioComunicacionPortType">
+    <wsdl:operation name="ReadCuentaUsuarioByRol">
+      <wsdl:input wsaw:Action="urn:ReadCuentaUsuarioByRol" message="ns:ReadCuentaUsuarioByRolRequest" />
+      <wsdl:output wsaw:Action="urn:ReadCuentaUsuarioByRolResponse" message="ns:ReadCuentaUsuarioByRolResponse" />
+      <wsdl:fault wsaw:Action="urn:ReadCuentaUsuarioByRolServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpresa">
+      <wsdl:input wsaw:Action="urn:DeleteEmpresa" message="ns:DeleteEmpresaRequest" />
+      <wsdl:output wsaw:Action="urn:DeleteEmpresaResponse" message="ns:DeleteEmpresaResponse" />
+      <wsdl:fault wsaw:Action="urn:DeleteEmpresaServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCurso">
+      <wsdl:input wsaw:Action="urn:UpdateCurso" message="ns:UpdateCursoRequest" />
+      <wsdl:output wsaw:Action="urn:UpdateCursoResponse" message="ns:UpdateCursoResponse" />
+      <wsdl:fault wsaw:Action="urn:UpdateCursoServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCuentaUsuario">
+      <wsdl:input wsaw:Action="urn:DeleteCuentaUsuario" message="ns:DeleteCuentaUsuarioRequest" />
+      <wsdl:output wsaw:Action="urn:DeleteCuentaUsuarioResponse" message="ns:DeleteCuentaUsuarioResponse" />
+      <wsdl:fault wsaw:Action="urn:DeleteCuentaUsuarioServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCuentaUsuario">
+      <wsdl:input wsaw:Action="urn:UpdateCuentaUsuario" message="ns:UpdateCuentaUsuarioRequest" />
+      <wsdl:output wsaw:Action="urn:UpdateCuentaUsuarioResponse" message="ns:UpdateCuentaUsuarioResponse" />
+      <wsdl:fault wsaw:Action="urn:UpdateCuentaUsuarioServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadProvincias">
+      <wsdl:input wsaw:Action="urn:ReadProvincias" message="ns:ReadProvinciasRequest" />
+      <wsdl:output wsaw:Action="urn:ReadProvinciasResponse" message="ns:ReadProvinciasResponse" />
+      <wsdl:fault wsaw:Action="urn:ReadProvinciasServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpleado">
+      <wsdl:input wsaw:Action="urn:InsertEmpleado" message="ns:InsertEmpleadoRequest" />
+      <wsdl:output wsaw:Action="urn:InsertEmpleadoResponse" message="ns:InsertEmpleadoResponse" />
+      <wsdl:fault wsaw:Action="urn:InsertEmpleadoServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpresa">
+      <wsdl:input wsaw:Action="urn:InsertEmpresa" message="ns:InsertEmpresaRequest" />
+      <wsdl:output wsaw:Action="urn:InsertEmpresaResponse" message="ns:InsertEmpresaResponse" />
+      <wsdl:fault wsaw:Action="urn:InsertEmpresaServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpresa">
+      <wsdl:input wsaw:Action="urn:UpdateEmpresa" message="ns:UpdateEmpresaRequest" />
+      <wsdl:output wsaw:Action="urn:UpdateEmpresaResponse" message="ns:UpdateEmpresaResponse" />
+      <wsdl:fault wsaw:Action="urn:UpdateEmpresaServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPlanCapacitacion">
+      <wsdl:input wsaw:Action="urn:InsertPlanCapacitacion" message="ns:InsertPlanCapacitacionRequest" />
+      <wsdl:output wsaw:Action="urn:InsertPlanCapacitacionResponse" message="ns:InsertPlanCapacitacionResponse" />
+      <wsdl:fault wsaw:Action="urn:InsertPlanCapacitacionServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertAlumno">
+      <wsdl:input wsaw:Action="urn:InsertAlumno" message="ns:InsertAlumnoRequest" />
+      <wsdl:output wsaw:Action="urn:InsertAlumnoResponse" message="ns:InsertAlumnoResponse" />
+      <wsdl:fault wsaw:Action="urn:InsertAlumnoServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadCursoByIdPlan">
+      <wsdl:input wsaw:Action="urn:ReadCursoByIdPlan" message="ns:ReadCursoByIdPlanRequest" />
+      <wsdl:output wsaw:Action="urn:ReadCursoByIdPlanResponse" message="ns:ReadCursoByIdPlanResponse" />
+      <wsdl:fault wsaw:Action="urn:ReadCursoByIdPlanServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpleado">
+      <wsdl:input wsaw:Action="urn:DeleteEmpleado" message="ns:DeleteEmpleadoRequest" />
+      <wsdl:output wsaw:Action="urn:DeleteEmpleadoResponse" message="ns:DeleteEmpleadoResponse" />
+      <wsdl:fault wsaw:Action="urn:DeleteEmpleadoServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadEmpresaByIdCuentaUsuario">
+      <wsdl:input wsaw:Action="urn:ReadEmpresaByIdCuentaUsuario" message="ns:ReadEmpresaByIdCuentaUsuarioRequest" />
+      <wsdl:output wsaw:Action="urn:ReadEmpresaByIdCuentaUsuarioResponse" message="ns:ReadEmpresaByIdCuentaUsuarioResponse" />
+      <wsdl:fault wsaw:Action="urn:ReadEmpresaByIdCuentaUsuarioServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpleado">
+      <wsdl:input wsaw:Action="urn:UpdateEmpleado" message="ns:UpdateEmpleadoRequest" />
+      <wsdl:output wsaw:Action="urn:UpdateEmpleadoResponse" message="ns:UpdateEmpleadoResponse" />
+      <wsdl:fault wsaw:Action="urn:UpdateEmpleadoServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadEmpleadoByEmpresa">
+      <wsdl:input wsaw:Action="urn:ReadEmpleadoByEmpresa" message="ns:ReadEmpleadoByEmpresaRequest" />
+      <wsdl:output wsaw:Action="urn:ReadEmpleadoByEmpresaResponse" message="ns:ReadEmpleadoByEmpresaResponse" />
+      <wsdl:fault wsaw:Action="urn:ReadEmpleadoByEmpresaServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadComunas">
+      <wsdl:input wsaw:Action="urn:ReadComunas" message="ns:ReadComunasRequest" />
+      <wsdl:output wsaw:Action="urn:ReadComunasResponse" message="ns:ReadComunasResponse" />
+      <wsdl:fault wsaw:Action="urn:ReadComunasServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaUsuario">
+      <wsdl:input wsaw:Action="urn:InsertCuentaUsuario" message="ns:InsertCuentaUsuarioRequest" />
+      <wsdl:output wsaw:Action="urn:InsertCuentaUsuarioResponse" message="ns:InsertCuentaUsuarioResponse" />
+      <wsdl:fault wsaw:Action="urn:InsertCuentaUsuarioServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <wsdl:input wsaw:Action="urn:ValidarUsuario" message="ns:ValidarUsuarioRequest" />
+      <wsdl:output wsaw:Action="urn:ValidarUsuarioResponse" message="ns:ValidarUsuarioResponse" />
+      <wsdl:fault wsaw:Action="urn:ValidarUsuarioServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCurso">
+      <wsdl:input wsaw:Action="urn:InsertCurso" message="ns:InsertCursoRequest" />
+      <wsdl:output wsaw:Action="urn:InsertCursoResponse" message="ns:InsertCursoResponse" />
+      <wsdl:fault wsaw:Action="urn:InsertCursoServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadPlanByRutEmpresa">
+      <wsdl:input wsaw:Action="urn:ReadPlanByRutEmpresa" message="ns:ReadPlanByRutEmpresaRequest" />
+      <wsdl:output wsaw:Action="urn:ReadPlanByRutEmpresaResponse" message="ns:ReadPlanByRutEmpresaResponse" />
+      <wsdl:fault wsaw:Action="urn:ReadPlanByRutEmpresaServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadRoles">
+      <wsdl:input wsaw:Action="urn:ReadRoles" message="ns:ReadRolesRequest" />
+      <wsdl:output wsaw:Action="urn:ReadRolesResponse" message="ns:ReadRolesResponse" />
+      <wsdl:fault wsaw:Action="urn:ReadRolesServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadRegiones">
+      <wsdl:input wsaw:Action="urn:ReadRegiones" message="ns:ReadRegionesRequest" />
+      <wsdl:output wsaw:Action="urn:ReadRegionesResponse" message="ns:ReadRegionesResponse" />
+      <wsdl:fault wsaw:Action="urn:ReadRegionesServicioComunicacionIOException" name="ServicioComunicacionIOException" message="ns:ServicioComunicacionIOException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioComunicacionSoap11Binding" type="ns:ServicioComunicacionPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadCuentaUsuarioByRol">
+      <soap:operation soapAction="urn:ReadCuentaUsuarioByRol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpresa">
+      <soap:operation soapAction="urn:DeleteEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCurso">
+      <soap:operation soapAction="urn:UpdateCurso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCuentaUsuario">
+      <soap:operation soapAction="urn:DeleteCuentaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCuentaUsuario">
+      <soap:operation soapAction="urn:UpdateCuentaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProvincias">
+      <soap:operation soapAction="urn:ReadProvincias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpleado">
+      <soap:operation soapAction="urn:InsertEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpresa">
+      <soap:operation soapAction="urn:InsertEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpresa">
+      <soap:operation soapAction="urn:UpdateEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPlanCapacitacion">
+      <soap:operation soapAction="urn:InsertPlanCapacitacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAlumno">
+      <soap:operation soapAction="urn:InsertAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCursoByIdPlan">
+      <soap:operation soapAction="urn:ReadCursoByIdPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpleado">
+      <soap:operation soapAction="urn:DeleteEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadEmpresaByIdCuentaUsuario">
+      <soap:operation soapAction="urn:ReadEmpresaByIdCuentaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpleado">
+      <soap:operation soapAction="urn:UpdateEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadEmpleadoByEmpresa">
+      <soap:operation soapAction="urn:ReadEmpleadoByEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadComunas">
+      <soap:operation soapAction="urn:ReadComunas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaUsuario">
+      <soap:operation soapAction="urn:InsertCuentaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <soap:operation soapAction="urn:ValidarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCurso">
+      <soap:operation soapAction="urn:InsertCurso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadPlanByRutEmpresa">
+      <soap:operation soapAction="urn:ReadPlanByRutEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadRoles">
+      <soap:operation soapAction="urn:ReadRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadRegiones">
+      <soap:operation soapAction="urn:ReadRegiones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioComunicacionSoap12Binding" type="ns:ServicioComunicacionPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadCuentaUsuarioByRol">
+      <soap12:operation soapAction="urn:ReadCuentaUsuarioByRol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpresa">
+      <soap12:operation soapAction="urn:DeleteEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCurso">
+      <soap12:operation soapAction="urn:UpdateCurso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCuentaUsuario">
+      <soap12:operation soapAction="urn:DeleteCuentaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCuentaUsuario">
+      <soap12:operation soapAction="urn:UpdateCuentaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadProvincias">
+      <soap12:operation soapAction="urn:ReadProvincias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpleado">
+      <soap12:operation soapAction="urn:InsertEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpresa">
+      <soap12:operation soapAction="urn:InsertEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpresa">
+      <soap12:operation soapAction="urn:UpdateEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPlanCapacitacion">
+      <soap12:operation soapAction="urn:InsertPlanCapacitacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAlumno">
+      <soap12:operation soapAction="urn:InsertAlumno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCursoByIdPlan">
+      <soap12:operation soapAction="urn:ReadCursoByIdPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpleado">
+      <soap12:operation soapAction="urn:DeleteEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadEmpresaByIdCuentaUsuario">
+      <soap12:operation soapAction="urn:ReadEmpresaByIdCuentaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpleado">
+      <soap12:operation soapAction="urn:UpdateEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadEmpleadoByEmpresa">
+      <soap12:operation soapAction="urn:ReadEmpleadoByEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadComunas">
+      <soap12:operation soapAction="urn:ReadComunas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaUsuario">
+      <soap12:operation soapAction="urn:InsertCuentaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <soap12:operation soapAction="urn:ValidarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCurso">
+      <soap12:operation soapAction="urn:InsertCurso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadPlanByRutEmpresa">
+      <soap12:operation soapAction="urn:ReadPlanByRutEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadRoles">
+      <soap12:operation soapAction="urn:ReadRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReadRegiones">
+      <soap12:operation soapAction="urn:ReadRegiones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException">
+        <soap12:fault use="literal" name="ServicioComunicacionIOException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioComunicacionHttpBinding" type="ns:ServicioComunicacionPortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ReadCuentaUsuarioByRol">
+      <http:operation location="ReadCuentaUsuarioByRol" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpresa">
+      <http:operation location="DeleteEmpresa" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCurso">
+      <http:operation location="UpdateCurso" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCuentaUsuario">
+      <http:operation location="DeleteCuentaUsuario" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCuentaUsuario">
+      <http:operation location="UpdateCuentaUsuario" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadProvincias">
+      <http:operation location="ReadProvincias" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpleado">
+      <http:operation location="InsertEmpleado" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpresa">
+      <http:operation location="InsertEmpresa" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpresa">
+      <http:operation location="UpdateEmpresa" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPlanCapacitacion">
+      <http:operation location="InsertPlanCapacitacion" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertAlumno">
+      <http:operation location="InsertAlumno" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadCursoByIdPlan">
+      <http:operation location="ReadCursoByIdPlan" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpleado">
+      <http:operation location="DeleteEmpleado" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadEmpresaByIdCuentaUsuario">
+      <http:operation location="ReadEmpresaByIdCuentaUsuario" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmpleado">
+      <http:operation location="UpdateEmpleado" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadEmpleadoByEmpresa">
+      <http:operation location="ReadEmpleadoByEmpresa" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadComunas">
+      <http:operation location="ReadComunas" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCuentaUsuario">
+      <http:operation location="InsertCuentaUsuario" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <http:operation location="ValidarUsuario" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCurso">
+      <http:operation location="InsertCurso" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadPlanByRutEmpresa">
+      <http:operation location="ReadPlanByRutEmpresa" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadRoles">
+      <http:operation location="ReadRoles" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadRegiones">
+      <http:operation location="ReadRegiones" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="ServicioComunicacionIOException" />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioComunicacion">
+    <wsdl:port name="ServicioComunicacionHttpSoap11Endpoint" binding="ns:ServicioComunicacionSoap11Binding">
+      <soap:address location="http://192.168.0.38:8081/ComunicacionWS/services/ServicioComunicacion.ServicioComunicacionHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="ServicioComunicacionHttpSoap12Endpoint" binding="ns:ServicioComunicacionSoap12Binding">
+      <soap12:address location="http://192.168.0.38:8081/ComunicacionWS/services/ServicioComunicacion.ServicioComunicacionHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="ServicioComunicacionHttpEndpoint" binding="ns:ServicioComunicacionHttpBinding">
+      <http:address location="http://192.168.0.38:8081/ComunicacionWS/services/ServicioComunicacion.ServicioComunicacionHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

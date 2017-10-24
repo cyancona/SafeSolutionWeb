@@ -7,9 +7,9 @@ namespace Safe.Negocio.Direccion
 {
     public class Comuna
     {
-        public int IdComuna { get; set; }
-        public Provincia Prov { get; set; }
-        public string NombreComuna { get; set; }
+        public int id_comuna { get; set; }
+        public int id_provincia { get; set; }
+        public string nom_comuna { get; set; }
 
         public Comuna()
         {
@@ -18,9 +18,9 @@ namespace Safe.Negocio.Direccion
 
         private void Init()
         {
-            this.IdComuna = 0;
-            this.Prov = new Provincia();
-            this.NombreComuna = string.Empty;
+            this.id_comuna = 0;
+            this.id_provincia = 0;
+            this.nom_comuna = string.Empty;
         }
 
         public string Serializar()
@@ -31,6 +31,11 @@ namespace Safe.Negocio.Direccion
         public static Comuna Deserializar(string json)
         {
             return (Comuna)ClaseComun.Deserializar<Comuna>(json);
+        }
+
+        public override string ToString()
+        {
+            return nom_comuna;
         }
     }
 }

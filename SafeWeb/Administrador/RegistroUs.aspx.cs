@@ -1,4 +1,6 @@
 ﻿using Safe.Negocio;
+using Safe.Negocio.Direccion;
+using SafeWeb.Comunicacion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,105 +12,164 @@ namespace SafeWeb.Administrador
 {
     public partial class RegistroUs : System.Web.UI.Page
     {
+        ServicioComunicacionPortTypeClient proxy = new ServicioComunicacionPortTypeClient(); //Comunicacion servicio
+        RegionCollection listaRegion = new RegionCollection(); //Coleccion de regiones.
+        ProvinciaCollection listaProvincia = new ProvinciaCollection(); //Coleccion de provincias.
+        ComunaCollection listaComuna = new ComunaCollection(); //Coleccion de Comunas.
+
+        int regionId;
+        int provinciaId;
+        int rol;
+        int id_cuenta;
+                
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                OtrosPn.Visible = true;
-                TipoUser.SelectedIndex = 0;
+                rol = Convert.ToInt32(Session["rol"]);
+                id_cuenta = Convert.ToInt32(Session["id_cuenta"]);
+
+                AgregarSegunRol(rol);
             }
         }
 
-        protected void btnRegUser_Click(object sender, EventArgs e)
+        #region AgregarUsuario-Empresa/Medico
+        private void AgregarSegunRol(int rol)
         {
             //https://www.youtube.com/watch?v=24hIhS2itUU
-            int num = int.Parse(TipoUser.SelectedValue);
-
-            switch (num)
+            switch (rol)
             {
-                case 4: //------------Expositor
-                    try
-                    {
-                        /*Falta 
-                        Expositor exp = new Expositor();
-                        exp.Nombre = txtNomuser.Text;
-                        exp.ApPaterno = txtAppaterno.Text;
-                        exp.ApMaterno = txtApMaterno.Text;
-                        exp.Rut = int.Parse(txtRutser.Text);
-                        exp.DVerificador = txtDvuser.Text;
-                        exp.Serializar();
-                         */
-                    }
-                    catch (Exception er)
-                    {
-                        lblError.Text = "Existe un error de conversion." + er.Message;
-                    }
-                    /*Direccion y comuna faltan ahi pero no son disponibles para este usuario*/
+                case 9: ///------------Empresa
+                    panMedico.Visible = false;
+                    Regiones();
+                    Provincias(regionId);
+                    Comunas(provinciaId);
                     break;
 
-                case 5: //------------Medico
-                    try
-                    {
-                        /* Falta
-                        Medico med = new Medico(); 
-                        med.Nombre = txtNomuser.Text;
-                        med.ApPaterno = txtAppaterno.Text;
-                        med.ApMaterno = txtApMaterno.Text;
-                        med.Rut = int.Parse(txtRutser.Text);
-                        med.DVerificador = txtDvuser.Text;
-                        med.Especialidad = string.Parse(ddEspecialidad.SelectedIndex);
-                        med.Serializar();
-                        */
-                    }
-                    catch (Exception er)
-                    {
-                        lblError.Text = "Existe un error de conversion " + er.Message;
-                    }
-                    /*Direccion y comuna faltan ahi pero no son disponibles para este usuario*/
-                    break;
-
-                default:
-                    try
-                    {
-                        Empleado user = new Empleado();
-                        user.Nombre = txtNomuser.Text;
-                        user.ApPaterno = txtAppaterno.Text;
-                        user.ApMaterno = txtApMaterno.Text;
-                        user.Rut = int.Parse(txtRutser.Text);
-                        user.DVerificador = txtDvuser.Text;
-                        user.FchNacimiento = DateTime.Parse(txtNacimiento.Text);
-                        user.Sexo = char.Parse(RbSexUser.SelectedValue);
-                        user.Fono = int.Parse(txtTelUser.Text);
-                        user.Celular = int.Parse(txtCelular.Text);
-                        user.Correo = txtEmail.Text;
-                        /* Estas faltan. Intento sacarlas de dropdownlist funcionales y dinamicos.
-                        user.Direccion = 
-                        user.Comuna = 
-                         */
-                        user.Serializar();
-                    }
-                    catch (Exception er)
-                    {
-                        lblError.Text = "Existe un error de conversion. " + er.Message;
-                    }
+                case 6: ///------------Medico
+                    panEmpresa.Visible = false;
                     break;
             }
         }
-        
-        protected void TipoUser_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void RegistroEmpresa()
         {
-            int num = int.Parse(TipoUser.SelectedValue);
-            switch (num)
+            try
             {
-                case 4:
-                    OtrosPn.Visible = false; OtrosPn.Enabled = false;
+                id_cuenta = Convert.ToInt32(Session["id_cuenta"]);
+                Safe.Negocio.Empresa emp = new Safe.Negocio.Empresa();
+                emp.rut_empresa = int.Parse(txtRutemp.Text);
+                emp.dv_empresa = txtDvemp.Text;
+                emp.razon_social = txtRazonSocial.Text;
+                emp.nombre_empresa = txtNomEmpresa.Text;
+                emp.dir_empresa = txtDireccion.Text;
+                emp.rubro = txtRubro.Text;
+                emp.id_comuna = int.Parse(ddComuna.SelectedValue);
+                emp.id_provincia = int.Parse(ddProvincia.SelectedValue);
+                emp.id_region = int.Parse(ddRegion.SelectedValue);
+                emp.id_cuenta_usuario = id_cuenta;
+
+                string jsonEmp = emp.Serializar(); //Envio de Empresa serializada
+
+                int resultEmp = proxy.InsertEmpresa(jsonEmp); //Metodo de envio string con json y devuelve int con resultado de rut empresa
+                
+                Response.Redirect("../Administrador/InicioAdministrador.aspx");
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = ex.Message;
+            }
+        }
+
+        private void RegistroMedico()
+        {
+            try
+            {
+                Safe.Negocio.Medico med = new Safe.Negocio.Medico();
+                med.rut = int.Parse(txtRutMed.Text);
+                med.dv = char.Parse(txtDvMed.Text);
+                med.nom_medico = txtNombreMed.Text;
+                med.ap_paterno = txtAppaterno.Text;
+                med.ap_materno = txtApmaterno.Text;
+                med.especialidad = txtEspecialidad.Text;
+                med.id_cuenta = 0;
+                string jsonmed = med.Serializar();
+
+                //int resultado = proxy.InsMedico(jsonmed);
+                lblError.Text = jsonmed;
+                Session["id_cuenta"] = null;
+                Session["rol"] = null;
+
+                Response.Redirect("../Administrador/InicioAdministrador.aspx");
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = ex.Message;
+            }
+            
+        }
+        #endregion
+
+
+        #region CargarListas/Roles/Regiones/Provincias/Comunas
+
+        private void Regiones()
+        {
+            string jsonRegion = proxy.ReadRegiones();//Se obtiene el Json de Servicio
+            listaRegion = RegionCollection.Deserializar(jsonRegion); //Convierte lista de servicio en clase de coleccion
+
+            ddRegion.DataSource = listaRegion;
+            ddRegion.DataBind();
+            regionId = int.Parse(ddRegion.SelectedValue);
+        }
+
+        private void Provincias(int region)
+        {
+            string jsonProvincia = proxy.ReadProvincias(regionId);
+            listaProvincia = ProvinciaCollection.Deserializar(jsonProvincia);
+
+            ddProvincia.DataSource = listaProvincia;
+            ddProvincia.DataBind();
+            provinciaId = int.Parse(ddProvincia.SelectedValue);
+        }
+
+        private void Comunas(int provincia)
+        {
+            string jsonComuna = proxy.ReadComunas(provinciaId);
+            listaComuna = ComunaCollection.Deserializar(jsonComuna);
+
+            ddComuna.DataSource = listaComuna;
+            ddComuna.DataBind();
+        }
+
+        protected void ddRegion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            regionId = int.Parse(ddRegion.SelectedValue);
+            Provincias(regionId);
+            ddProvincia.Enabled = true;
+        }
+
+        protected void ddProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            provinciaId = int.Parse(ddProvincia.SelectedValue);
+            Comunas(provinciaId);
+            ddComuna.Enabled = true;
+        }
+        #endregion
+
+        protected void btnRegistro_Click(object sender, EventArgs e)
+        {
+            rol = Convert.ToInt32(Session["rol"]);
+            
+            switch (rol)
+            {
+                case 6:
+                    RegistroMedico();
+                    Response.Redirect("../Administrador/InicioAdministrador.aspx");
                     break;
-                case 5:
-                    OtrosPn.Visible = false; OtrosPn.Enabled = false;
-                    break;
-                default:
-                    OtrosPn.Visible = true; OtrosPn.Enabled = true;
-                    txtNacimiento.Enabled = true;
+                case 9:
+                    RegistroEmpresa();
+                    Response.Redirect("../Administrador/InicioAdministrador.aspx");
                     break;
             }
         }

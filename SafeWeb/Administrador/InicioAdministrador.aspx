@@ -3,7 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Panel ID="InicioAdmin" runat="server" CssClass="central centro">
-        <asp:ImageButton ID="RegistroEmp" runat="server" ImageUrl="~/Images/upFile.png" Width="120px"/>
-        <asp:ImageButton ID="RegistroUs" runat="server" />
+        <asp:ImageButton ID="RegistroCU" runat="server" ImageUrl="~/Images/upFile.png" Width="120px" CssClass="limpio" OnClick="RegistroEmp_Click"/>
     </asp:Panel>
 </asp:Content>

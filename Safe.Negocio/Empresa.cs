@@ -8,14 +8,16 @@ namespace Safe.Negocio
 {
     public class Empresa
     {
-        public int Rut { get; set; }
-        public string DVerificador { get; set; }
-        public string RazonSocial { get; set; }
-        public string NombreCorto { get; set; }
-        public string DirPrincipal { get; set; }
-        public string Rubro { get; set; }
-        public CuentaUsuario Cuenta { get; set; }
-        public Direccion.Comuna Comu { get; set; }
+        public int rut_empresa { get; set; }
+        public string dv_empresa { get; set; }
+        public string razon_social { get; set; }
+        public string nombre_empresa { get; set; }
+        public string dir_empresa { get; set; }
+        public string rubro { get; set; }
+        public int id_comuna { get; set; }
+        public int id_provincia { get; set; }
+        public int id_region { get; set; }
+        public int id_cuenta_usuario { get; set; }
 
         public Empresa()
         {
@@ -24,14 +26,16 @@ namespace Safe.Negocio
 
         private void Init()
         {
-            this.Rut = 0;
-            this.DVerificador = string.Empty;
-            this.RazonSocial = string.Empty;
-            this.NombreCorto = string.Empty;
-            this.DirPrincipal = string.Empty;
-            this.Rubro = string.Empty;
-            this.Cuenta = new CuentaUsuario();
-            this.Comu = new Direccion.Comuna();
+            this.rut_empresa = 0;
+            this.dv_empresa = string.Empty;
+            this.razon_social = string.Empty;
+            this.nombre_empresa = string.Empty;
+            this.dir_empresa = string.Empty;
+            this.rubro = string.Empty;
+            this.id_comuna = 0;
+            this.id_provincia = 0;
+            this.id_region = 0;
+            this.id_cuenta_usuario = 0;
         }
 
         public string Serializar()
@@ -43,6 +47,7 @@ namespace Safe.Negocio
         {
             return (Empresa)ClaseComun.Deserializar<Empresa>(json);
         }
+
     }
 
 }

@@ -7,10 +7,10 @@ namespace Safe.Negocio.Direccion
 {
     public class Provincia
     {
-        public int IdProvincia { get; set; }
-        public Region Reg { get; set; }
-        public string NombreProvincia { get; set; }
-        public int CantComunas { get; set; }
+        public int id_provincia { get; set; }
+        public int id_region { get; set; }
+        public string nom_provincia { get; set; }
+        public int cant_comunas { get; set; }
 
         public Provincia()
         {
@@ -19,10 +19,10 @@ namespace Safe.Negocio.Direccion
 
         private void Init()
         {
-            this.IdProvincia = 0;
-            this.Reg = new Region();
-            this.NombreProvincia = string.Empty;
-            this.CantComunas = 0;
+            this.id_provincia = 0;
+            this.id_region = 0;
+            this.nom_provincia = string.Empty;
+            this.cant_comunas = 0;
         }
 
         public string Serializar()
@@ -33,6 +33,11 @@ namespace Safe.Negocio.Direccion
         public static Provincia Deserializar(string json)
         {
             return (Provincia)ClaseComun.Deserializar<Provincia>(json);
+        }
+
+        public override string ToString()
+        {
+            return nom_provincia;
         }
     }
 }

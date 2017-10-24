@@ -7,11 +7,11 @@ namespace Safe.Negocio.Direccion
 {
     public class Region
     {
-        public int IdRegion { get; set; }
-        public string NombreRegion { get; set; }
-        public string NroRomano { get; set; }
-        public int CantProvincias { get; set; }
-        public int CantComunas { get; set; }
+        public int id_region { get; set; }
+        public string nom_region { get; set; }
+        public string nro_romano { get; set; }
+        public int cant_provincias { get; set; }
+        public int cant_comunas { get; set; }
 
         public Region()
         {
@@ -20,11 +20,11 @@ namespace Safe.Negocio.Direccion
 
         private void Init()
         {
-            this.IdRegion = 0;
-            this.NombreRegion = string.Empty;
-            this.NroRomano = string.Empty;
-            this.CantProvincias = 0;
-            this.CantComunas = 0;
+            this.id_region = 0;
+            this.nom_region = string.Empty;
+            this.nro_romano = string.Empty;
+            this.cant_provincias = 0;
+            this.cant_comunas = 0;
         }
 
         public string Serializar()
@@ -35,6 +35,11 @@ namespace Safe.Negocio.Direccion
         public static Region Deserializar(string json)
         {
             return (Region)ClaseComun.Deserializar<Region>(json);
+        }
+
+        public override string ToString()
+        {
+            return nom_region;
         }
     }
 }

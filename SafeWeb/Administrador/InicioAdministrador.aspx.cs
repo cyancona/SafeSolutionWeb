@@ -11,7 +11,14 @@ namespace SafeWeb.Administrador
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["id_cuenta"] = null;
+            Session["rol"] = null;
         }
+
+        protected void RegistroEmp_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("../Administrador/RegistroCntaUs.aspx");
+        }
+        
     }
 }

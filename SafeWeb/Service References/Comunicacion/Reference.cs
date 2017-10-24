@@ -12,7 +12,7 @@ namespace SafeWeb.Comunicacion {
     
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2114.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -44,7 +44,7 @@ namespace SafeWeb.Comunicacion {
     }
     
     /// <comentarios/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2114.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -65,6 +65,46 @@ namespace SafeWeb.Comunicacion {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://service", ConfigurationName="Comunicacion.ServicioComunicacionPortType")]
     public interface ServicioComunicacionPortType {
         
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadCuentaUsuarioByRol", ReplyAction="urn:ReadCuentaUsuarioByRolResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:ReadCuentaUsuarioByRolServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.ReadCuentaUsuarioByRolResponse ReadCuentaUsuarioByRol(SafeWeb.Comunicacion.ReadCuentaUsuarioByRolRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadCuentaUsuarioByRol", ReplyAction="urn:ReadCuentaUsuarioByRolResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadCuentaUsuarioByRolResponse> ReadCuentaUsuarioByRolAsync(SafeWeb.Comunicacion.ReadCuentaUsuarioByRolRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:DeleteEmpresa", ReplyAction="urn:DeleteEmpresaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:DeleteEmpresaServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        int DeleteEmpresa(int rutEmpresa);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:DeleteEmpresa", ReplyAction="urn:DeleteEmpresaResponse")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<int> DeleteEmpresaAsync(int rutEmpresa);
+        
+        // CODEGEN: El parámetro 'cursoJson' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:UpdateCurso", ReplyAction="urn:UpdateCursoResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:UpdateCursoServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.UpdateCursoResponse UpdateCurso(SafeWeb.Comunicacion.UpdateCursoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:UpdateCurso", ReplyAction="urn:UpdateCursoResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.UpdateCursoResponse> UpdateCursoAsync(SafeWeb.Comunicacion.UpdateCursoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:DeleteCuentaUsuario", ReplyAction="urn:DeleteCuentaUsuarioResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:DeleteCuentaUsuarioServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        int DeleteCuentaUsuario(int idCuentaUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:DeleteCuentaUsuario", ReplyAction="urn:DeleteCuentaUsuarioResponse")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<int> DeleteCuentaUsuarioAsync(int idCuentaUsuario);
+        
         // CODEGEN: El parámetro 'usuarioJson' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:UpdateCuentaUsuario", ReplyAction="urn:UpdateCuentaUsuarioResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:UpdateCuentaUsuarioServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
@@ -74,6 +114,126 @@ namespace SafeWeb.Comunicacion {
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:UpdateCuentaUsuario", ReplyAction="urn:UpdateCuentaUsuarioResponse")]
         System.Threading.Tasks.Task<SafeWeb.Comunicacion.UpdateCuentaUsuarioResponse> UpdateCuentaUsuarioAsync(SafeWeb.Comunicacion.UpdateCuentaUsuarioRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadProvincias", ReplyAction="urn:ReadProvinciasResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:ReadProvinciasServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.ReadProvinciasResponse ReadProvincias(SafeWeb.Comunicacion.ReadProvinciasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadProvincias", ReplyAction="urn:ReadProvinciasResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadProvinciasResponse> ReadProvinciasAsync(SafeWeb.Comunicacion.ReadProvinciasRequest request);
+        
+        // CODEGEN: El parámetro 'empleadoJson' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:InsertEmpleado", ReplyAction="urn:InsertEmpleadoResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:InsertEmpleadoServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.InsertEmpleadoResponse InsertEmpleado(SafeWeb.Comunicacion.InsertEmpleadoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:InsertEmpleado", ReplyAction="urn:InsertEmpleadoResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.InsertEmpleadoResponse> InsertEmpleadoAsync(SafeWeb.Comunicacion.InsertEmpleadoRequest request);
+        
+        // CODEGEN: El parámetro 'empresaJson' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:InsertEmpresa", ReplyAction="urn:InsertEmpresaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:InsertEmpresaServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.InsertEmpresaResponse InsertEmpresa(SafeWeb.Comunicacion.InsertEmpresaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:InsertEmpresa", ReplyAction="urn:InsertEmpresaResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.InsertEmpresaResponse> InsertEmpresaAsync(SafeWeb.Comunicacion.InsertEmpresaRequest request);
+        
+        // CODEGEN: El parámetro 'empresaJson' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:UpdateEmpresa", ReplyAction="urn:UpdateEmpresaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:UpdateEmpresaServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.UpdateEmpresaResponse UpdateEmpresa(SafeWeb.Comunicacion.UpdateEmpresaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:UpdateEmpresa", ReplyAction="urn:UpdateEmpresaResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.UpdateEmpresaResponse> UpdateEmpresaAsync(SafeWeb.Comunicacion.UpdateEmpresaRequest request);
+        
+        // CODEGEN: El parámetro 'planJson' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:InsertPlanCapacitacion", ReplyAction="urn:InsertPlanCapacitacionResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:InsertPlanCapacitacionServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.InsertPlanCapacitacionResponse InsertPlanCapacitacion(SafeWeb.Comunicacion.InsertPlanCapacitacionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:InsertPlanCapacitacion", ReplyAction="urn:InsertPlanCapacitacionResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.InsertPlanCapacitacionResponse> InsertPlanCapacitacionAsync(SafeWeb.Comunicacion.InsertPlanCapacitacionRequest request);
+        
+        // CODEGEN: El parámetro 'alumnoJson' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:InsertAlumno", ReplyAction="urn:InsertAlumnoResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:InsertAlumnoServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.InsertAlumnoResponse InsertAlumno(SafeWeb.Comunicacion.InsertAlumnoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:InsertAlumno", ReplyAction="urn:InsertAlumnoResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.InsertAlumnoResponse> InsertAlumnoAsync(SafeWeb.Comunicacion.InsertAlumnoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadCursoByIdPlan", ReplyAction="urn:ReadCursoByIdPlanResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:ReadCursoByIdPlanServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.ReadCursoByIdPlanResponse ReadCursoByIdPlan(SafeWeb.Comunicacion.ReadCursoByIdPlanRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadCursoByIdPlan", ReplyAction="urn:ReadCursoByIdPlanResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadCursoByIdPlanResponse> ReadCursoByIdPlanAsync(SafeWeb.Comunicacion.ReadCursoByIdPlanRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:DeleteEmpleado", ReplyAction="urn:DeleteEmpleadoResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:DeleteEmpleadoServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        int DeleteEmpleado(int rutEmpleado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:DeleteEmpleado", ReplyAction="urn:DeleteEmpleadoResponse")]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        System.Threading.Tasks.Task<int> DeleteEmpleadoAsync(int rutEmpleado);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadEmpresaByIdCuentaUsuario", ReplyAction="urn:ReadEmpresaByIdCuentaUsuarioResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:ReadEmpresaByIdCuentaUsuarioServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.ReadEmpresaByIdCuentaUsuarioResponse ReadEmpresaByIdCuentaUsuario(SafeWeb.Comunicacion.ReadEmpresaByIdCuentaUsuarioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadEmpresaByIdCuentaUsuario", ReplyAction="urn:ReadEmpresaByIdCuentaUsuarioResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadEmpresaByIdCuentaUsuarioResponse> ReadEmpresaByIdCuentaUsuarioAsync(SafeWeb.Comunicacion.ReadEmpresaByIdCuentaUsuarioRequest request);
+        
+        // CODEGEN: El parámetro 'empleadoJson' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:UpdateEmpleado", ReplyAction="urn:UpdateEmpleadoResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:UpdateEmpleadoServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.UpdateEmpleadoResponse UpdateEmpleado(SafeWeb.Comunicacion.UpdateEmpleadoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:UpdateEmpleado", ReplyAction="urn:UpdateEmpleadoResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.UpdateEmpleadoResponse> UpdateEmpleadoAsync(SafeWeb.Comunicacion.UpdateEmpleadoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadEmpleadoByEmpresa", ReplyAction="urn:ReadEmpleadoByEmpresaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:ReadEmpleadoByEmpresaServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.ReadEmpleadoByEmpresaResponse ReadEmpleadoByEmpresa(SafeWeb.Comunicacion.ReadEmpleadoByEmpresaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadEmpleadoByEmpresa", ReplyAction="urn:ReadEmpleadoByEmpresaResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadEmpleadoByEmpresaResponse> ReadEmpleadoByEmpresaAsync(SafeWeb.Comunicacion.ReadEmpleadoByEmpresaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadComunas", ReplyAction="urn:ReadComunasResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:ReadComunasServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.ReadComunasResponse ReadComunas(SafeWeb.Comunicacion.ReadComunasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadComunas", ReplyAction="urn:ReadComunasResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadComunasResponse> ReadComunasAsync(SafeWeb.Comunicacion.ReadComunasRequest request);
         
         // CODEGEN: El parámetro 'usuarioJson' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="urn:InsertCuentaUsuario", ReplyAction="urn:InsertCuentaUsuarioResponse")]
@@ -94,6 +254,116 @@ namespace SafeWeb.Comunicacion {
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:ValidarUsuario", ReplyAction="urn:ValidarUsuarioResponse")]
         System.Threading.Tasks.Task<SafeWeb.Comunicacion.ValidarUsuarioResponse> ValidarUsuarioAsync(SafeWeb.Comunicacion.ValidarUsuarioRequest request);
+        
+        // CODEGEN: El parámetro 'cursoJson' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:InsertCurso", ReplyAction="urn:InsertCursoResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:InsertCursoServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.InsertCursoResponse InsertCurso(SafeWeb.Comunicacion.InsertCursoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:InsertCurso", ReplyAction="urn:InsertCursoResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.InsertCursoResponse> InsertCursoAsync(SafeWeb.Comunicacion.InsertCursoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadPlanByRutEmpresa", ReplyAction="urn:ReadPlanByRutEmpresaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:ReadPlanByRutEmpresaServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.ReadPlanByRutEmpresaResponse ReadPlanByRutEmpresa(SafeWeb.Comunicacion.ReadPlanByRutEmpresaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadPlanByRutEmpresa", ReplyAction="urn:ReadPlanByRutEmpresaResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadPlanByRutEmpresaResponse> ReadPlanByRutEmpresaAsync(SafeWeb.Comunicacion.ReadPlanByRutEmpresaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadRoles", ReplyAction="urn:ReadRolesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:ReadRolesServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.ReadRolesResponse ReadRoles(SafeWeb.Comunicacion.ReadRolesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadRoles", ReplyAction="urn:ReadRolesResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadRolesResponse> ReadRolesAsync(SafeWeb.Comunicacion.ReadRolesRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadRegiones", ReplyAction="urn:ReadRegionesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(SafeWeb.Comunicacion.ServicioComunicacionIOException), Action="urn:ReadRegionesServicioComunicacionIOException", Name="ServicioComunicacionIOException")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SafeWeb.Comunicacion.ReadRegionesResponse ReadRegiones(SafeWeb.Comunicacion.ReadRegionesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:ReadRegiones", ReplyAction="urn:ReadRegionesResponse")]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadRegionesResponse> ReadRegionesAsync(SafeWeb.Comunicacion.ReadRegionesRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadCuentaUsuarioByRol", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadCuentaUsuarioByRolRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        public int idRol;
+        
+        public ReadCuentaUsuarioByRolRequest() {
+        }
+        
+        public ReadCuentaUsuarioByRolRequest(int idRol) {
+            this.idRol = idRol;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadCuentaUsuarioByRolResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadCuentaUsuarioByRolResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string @return;
+        
+        public ReadCuentaUsuarioByRolResponse() {
+        }
+        
+        public ReadCuentaUsuarioByRolResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateCurso", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class UpdateCursoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string cursoJson;
+        
+        public UpdateCursoRequest() {
+        }
+        
+        public UpdateCursoRequest(string cursoJson) {
+            this.cursoJson = cursoJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateCursoResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class UpdateCursoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        public int @return;
+        
+        public UpdateCursoResponse() {
+        }
+        
+        public UpdateCursoResponse(int @return) {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -134,6 +404,391 @@ namespace SafeWeb.Comunicacion {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadProvincias", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadProvinciasRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        public int idRegion;
+        
+        public ReadProvinciasRequest() {
+        }
+        
+        public ReadProvinciasRequest(int idRegion) {
+            this.idRegion = idRegion;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadProvinciasResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadProvinciasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string @return;
+        
+        public ReadProvinciasResponse() {
+        }
+        
+        public ReadProvinciasResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertEmpleado", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class InsertEmpleadoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string empleadoJson;
+        
+        public InsertEmpleadoRequest() {
+        }
+        
+        public InsertEmpleadoRequest(string empleadoJson) {
+            this.empleadoJson = empleadoJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertEmpleadoResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class InsertEmpleadoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        public int @return;
+        
+        public InsertEmpleadoResponse() {
+        }
+        
+        public InsertEmpleadoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertEmpresa", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class InsertEmpresaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string empresaJson;
+        
+        public InsertEmpresaRequest() {
+        }
+        
+        public InsertEmpresaRequest(string empresaJson) {
+            this.empresaJson = empresaJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertEmpresaResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class InsertEmpresaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        public int @return;
+        
+        public InsertEmpresaResponse() {
+        }
+        
+        public InsertEmpresaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateEmpresa", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class UpdateEmpresaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string empresaJson;
+        
+        public UpdateEmpresaRequest() {
+        }
+        
+        public UpdateEmpresaRequest(string empresaJson) {
+            this.empresaJson = empresaJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateEmpresaResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class UpdateEmpresaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        public int @return;
+        
+        public UpdateEmpresaResponse() {
+        }
+        
+        public UpdateEmpresaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertPlanCapacitacion", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class InsertPlanCapacitacionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string planJson;
+        
+        public InsertPlanCapacitacionRequest() {
+        }
+        
+        public InsertPlanCapacitacionRequest(string planJson) {
+            this.planJson = planJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertPlanCapacitacionResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class InsertPlanCapacitacionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        public int @return;
+        
+        public InsertPlanCapacitacionResponse() {
+        }
+        
+        public InsertPlanCapacitacionResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertAlumno", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class InsertAlumnoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string alumnoJson;
+        
+        public InsertAlumnoRequest() {
+        }
+        
+        public InsertAlumnoRequest(string alumnoJson) {
+            this.alumnoJson = alumnoJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertAlumnoResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class InsertAlumnoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        public int @return;
+        
+        public InsertAlumnoResponse() {
+        }
+        
+        public InsertAlumnoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadCursoByIdPlan", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadCursoByIdPlanRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        public int idPlanCapacitacion;
+        
+        public ReadCursoByIdPlanRequest() {
+        }
+        
+        public ReadCursoByIdPlanRequest(int idPlanCapacitacion) {
+            this.idPlanCapacitacion = idPlanCapacitacion;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadCursoByIdPlanResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadCursoByIdPlanResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string @return;
+        
+        public ReadCursoByIdPlanResponse() {
+        }
+        
+        public ReadCursoByIdPlanResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadEmpresaByIdCuentaUsuario", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadEmpresaByIdCuentaUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        public int idCuentaUsuario;
+        
+        public ReadEmpresaByIdCuentaUsuarioRequest() {
+        }
+        
+        public ReadEmpresaByIdCuentaUsuarioRequest(int idCuentaUsuario) {
+            this.idCuentaUsuario = idCuentaUsuario;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadEmpresaByIdCuentaUsuarioResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadEmpresaByIdCuentaUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string @return;
+        
+        public ReadEmpresaByIdCuentaUsuarioResponse() {
+        }
+        
+        public ReadEmpresaByIdCuentaUsuarioResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateEmpleado", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class UpdateEmpleadoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string empleadoJson;
+        
+        public UpdateEmpleadoRequest() {
+        }
+        
+        public UpdateEmpleadoRequest(string empleadoJson) {
+            this.empleadoJson = empleadoJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="UpdateEmpleadoResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class UpdateEmpleadoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        public int @return;
+        
+        public UpdateEmpleadoResponse() {
+        }
+        
+        public UpdateEmpleadoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadEmpleadoByEmpresa", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadEmpleadoByEmpresaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        public int rutEmpresa;
+        
+        public ReadEmpleadoByEmpresaRequest() {
+        }
+        
+        public ReadEmpleadoByEmpresaRequest(int rutEmpresa) {
+            this.rutEmpresa = rutEmpresa;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadEmpleadoByEmpresaResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadEmpleadoByEmpresaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string @return;
+        
+        public ReadEmpleadoByEmpresaResponse() {
+        }
+        
+        public ReadEmpleadoByEmpresaResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadComunas", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadComunasRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        public int idProvincia;
+        
+        public ReadComunasRequest() {
+        }
+        
+        public ReadComunasRequest(int idProvincia) {
+            this.idProvincia = idProvincia;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadComunasResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadComunasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string @return;
+        
+        public ReadComunasResponse() {
+        }
+        
+        public ReadComunasResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="InsertCuentaUsuario", WrapperNamespace="http://service", IsWrapped=true)]
     public partial class InsertCuentaUsuarioRequest {
         
@@ -156,12 +811,12 @@ namespace SafeWeb.Comunicacion {
     public partial class InsertCuentaUsuarioResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
-        public bool @return;
+        public int @return;
         
         public InsertCuentaUsuarioResponse() {
         }
         
-        public InsertCuentaUsuarioResponse(bool @return) {
+        public InsertCuentaUsuarioResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -202,6 +857,132 @@ namespace SafeWeb.Comunicacion {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertCurso", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class InsertCursoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string cursoJson;
+        
+        public InsertCursoRequest() {
+        }
+        
+        public InsertCursoRequest(string cursoJson) {
+            this.cursoJson = cursoJson;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsertCursoResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class InsertCursoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        public int @return;
+        
+        public InsertCursoResponse() {
+        }
+        
+        public InsertCursoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadPlanByRutEmpresa", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadPlanByRutEmpresaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        public int rutEmpresa;
+        
+        public ReadPlanByRutEmpresaRequest() {
+        }
+        
+        public ReadPlanByRutEmpresaRequest(int rutEmpresa) {
+            this.rutEmpresa = rutEmpresa;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadPlanByRutEmpresaResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadPlanByRutEmpresaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string @return;
+        
+        public ReadPlanByRutEmpresaResponse() {
+        }
+        
+        public ReadPlanByRutEmpresaResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadRoles", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadRolesRequest {
+        
+        public ReadRolesRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadRolesResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadRolesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string @return;
+        
+        public ReadRolesResponse() {
+        }
+        
+        public ReadRolesResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadRegiones", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadRegionesRequest {
+        
+        public ReadRegionesRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ReadRegionesResponse", WrapperNamespace="http://service", IsWrapped=true)]
+    public partial class ReadRegionesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://service", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string @return;
+        
+        public ReadRegionesResponse() {
+        }
+        
+        public ReadRegionesResponse(string @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServicioComunicacionPortTypeChannel : SafeWeb.Comunicacion.ServicioComunicacionPortType, System.ServiceModel.IClientChannel {
     }
@@ -230,6 +1011,68 @@ namespace SafeWeb.Comunicacion {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.ReadCuentaUsuarioByRolResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadCuentaUsuarioByRol(SafeWeb.Comunicacion.ReadCuentaUsuarioByRolRequest request) {
+            return base.Channel.ReadCuentaUsuarioByRol(request);
+        }
+        
+        public string ReadCuentaUsuarioByRol(int idRol) {
+            SafeWeb.Comunicacion.ReadCuentaUsuarioByRolRequest inValue = new SafeWeb.Comunicacion.ReadCuentaUsuarioByRolRequest();
+            inValue.idRol = idRol;
+            SafeWeb.Comunicacion.ReadCuentaUsuarioByRolResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadCuentaUsuarioByRol(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadCuentaUsuarioByRolResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadCuentaUsuarioByRolAsync(SafeWeb.Comunicacion.ReadCuentaUsuarioByRolRequest request) {
+            return base.Channel.ReadCuentaUsuarioByRolAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadCuentaUsuarioByRolResponse> ReadCuentaUsuarioByRolAsync(int idRol) {
+            SafeWeb.Comunicacion.ReadCuentaUsuarioByRolRequest inValue = new SafeWeb.Comunicacion.ReadCuentaUsuarioByRolRequest();
+            inValue.idRol = idRol;
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadCuentaUsuarioByRolAsync(inValue);
+        }
+        
+        public int DeleteEmpresa(int rutEmpresa) {
+            return base.Channel.DeleteEmpresa(rutEmpresa);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteEmpresaAsync(int rutEmpresa) {
+            return base.Channel.DeleteEmpresaAsync(rutEmpresa);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.UpdateCursoResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.UpdateCurso(SafeWeb.Comunicacion.UpdateCursoRequest request) {
+            return base.Channel.UpdateCurso(request);
+        }
+        
+        public int UpdateCurso(string cursoJson) {
+            SafeWeb.Comunicacion.UpdateCursoRequest inValue = new SafeWeb.Comunicacion.UpdateCursoRequest();
+            inValue.cursoJson = cursoJson;
+            SafeWeb.Comunicacion.UpdateCursoResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).UpdateCurso(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.UpdateCursoResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.UpdateCursoAsync(SafeWeb.Comunicacion.UpdateCursoRequest request) {
+            return base.Channel.UpdateCursoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.UpdateCursoResponse> UpdateCursoAsync(string cursoJson) {
+            SafeWeb.Comunicacion.UpdateCursoRequest inValue = new SafeWeb.Comunicacion.UpdateCursoRequest();
+            inValue.cursoJson = cursoJson;
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).UpdateCursoAsync(inValue);
+        }
+        
+        public int DeleteCuentaUsuario(int idCuentaUsuario) {
+            return base.Channel.DeleteCuentaUsuario(idCuentaUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteCuentaUsuarioAsync(int idCuentaUsuario) {
+            return base.Channel.DeleteCuentaUsuarioAsync(idCuentaUsuario);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SafeWeb.Comunicacion.UpdateCuentaUsuarioResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.UpdateCuentaUsuario(SafeWeb.Comunicacion.UpdateCuentaUsuarioRequest request) {
             return base.Channel.UpdateCuentaUsuario(request);
         }
@@ -253,11 +1096,272 @@ namespace SafeWeb.Comunicacion {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.ReadProvinciasResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadProvincias(SafeWeb.Comunicacion.ReadProvinciasRequest request) {
+            return base.Channel.ReadProvincias(request);
+        }
+        
+        public string ReadProvincias(int idRegion) {
+            SafeWeb.Comunicacion.ReadProvinciasRequest inValue = new SafeWeb.Comunicacion.ReadProvinciasRequest();
+            inValue.idRegion = idRegion;
+            SafeWeb.Comunicacion.ReadProvinciasResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadProvincias(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadProvinciasResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadProvinciasAsync(SafeWeb.Comunicacion.ReadProvinciasRequest request) {
+            return base.Channel.ReadProvinciasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadProvinciasResponse> ReadProvinciasAsync(int idRegion) {
+            SafeWeb.Comunicacion.ReadProvinciasRequest inValue = new SafeWeb.Comunicacion.ReadProvinciasRequest();
+            inValue.idRegion = idRegion;
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadProvinciasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.InsertEmpleadoResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.InsertEmpleado(SafeWeb.Comunicacion.InsertEmpleadoRequest request) {
+            return base.Channel.InsertEmpleado(request);
+        }
+        
+        public int InsertEmpleado(string empleadoJson) {
+            SafeWeb.Comunicacion.InsertEmpleadoRequest inValue = new SafeWeb.Comunicacion.InsertEmpleadoRequest();
+            inValue.empleadoJson = empleadoJson;
+            SafeWeb.Comunicacion.InsertEmpleadoResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).InsertEmpleado(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.InsertEmpleadoResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.InsertEmpleadoAsync(SafeWeb.Comunicacion.InsertEmpleadoRequest request) {
+            return base.Channel.InsertEmpleadoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.InsertEmpleadoResponse> InsertEmpleadoAsync(string empleadoJson) {
+            SafeWeb.Comunicacion.InsertEmpleadoRequest inValue = new SafeWeb.Comunicacion.InsertEmpleadoRequest();
+            inValue.empleadoJson = empleadoJson;
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).InsertEmpleadoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.InsertEmpresaResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.InsertEmpresa(SafeWeb.Comunicacion.InsertEmpresaRequest request) {
+            return base.Channel.InsertEmpresa(request);
+        }
+        
+        public int InsertEmpresa(string empresaJson) {
+            SafeWeb.Comunicacion.InsertEmpresaRequest inValue = new SafeWeb.Comunicacion.InsertEmpresaRequest();
+            inValue.empresaJson = empresaJson;
+            SafeWeb.Comunicacion.InsertEmpresaResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).InsertEmpresa(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.InsertEmpresaResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.InsertEmpresaAsync(SafeWeb.Comunicacion.InsertEmpresaRequest request) {
+            return base.Channel.InsertEmpresaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.InsertEmpresaResponse> InsertEmpresaAsync(string empresaJson) {
+            SafeWeb.Comunicacion.InsertEmpresaRequest inValue = new SafeWeb.Comunicacion.InsertEmpresaRequest();
+            inValue.empresaJson = empresaJson;
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).InsertEmpresaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.UpdateEmpresaResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.UpdateEmpresa(SafeWeb.Comunicacion.UpdateEmpresaRequest request) {
+            return base.Channel.UpdateEmpresa(request);
+        }
+        
+        public int UpdateEmpresa(string empresaJson) {
+            SafeWeb.Comunicacion.UpdateEmpresaRequest inValue = new SafeWeb.Comunicacion.UpdateEmpresaRequest();
+            inValue.empresaJson = empresaJson;
+            SafeWeb.Comunicacion.UpdateEmpresaResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).UpdateEmpresa(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.UpdateEmpresaResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.UpdateEmpresaAsync(SafeWeb.Comunicacion.UpdateEmpresaRequest request) {
+            return base.Channel.UpdateEmpresaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.UpdateEmpresaResponse> UpdateEmpresaAsync(string empresaJson) {
+            SafeWeb.Comunicacion.UpdateEmpresaRequest inValue = new SafeWeb.Comunicacion.UpdateEmpresaRequest();
+            inValue.empresaJson = empresaJson;
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).UpdateEmpresaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.InsertPlanCapacitacionResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.InsertPlanCapacitacion(SafeWeb.Comunicacion.InsertPlanCapacitacionRequest request) {
+            return base.Channel.InsertPlanCapacitacion(request);
+        }
+        
+        public int InsertPlanCapacitacion(string planJson) {
+            SafeWeb.Comunicacion.InsertPlanCapacitacionRequest inValue = new SafeWeb.Comunicacion.InsertPlanCapacitacionRequest();
+            inValue.planJson = planJson;
+            SafeWeb.Comunicacion.InsertPlanCapacitacionResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).InsertPlanCapacitacion(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.InsertPlanCapacitacionResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.InsertPlanCapacitacionAsync(SafeWeb.Comunicacion.InsertPlanCapacitacionRequest request) {
+            return base.Channel.InsertPlanCapacitacionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.InsertPlanCapacitacionResponse> InsertPlanCapacitacionAsync(string planJson) {
+            SafeWeb.Comunicacion.InsertPlanCapacitacionRequest inValue = new SafeWeb.Comunicacion.InsertPlanCapacitacionRequest();
+            inValue.planJson = planJson;
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).InsertPlanCapacitacionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.InsertAlumnoResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.InsertAlumno(SafeWeb.Comunicacion.InsertAlumnoRequest request) {
+            return base.Channel.InsertAlumno(request);
+        }
+        
+        public int InsertAlumno(string alumnoJson) {
+            SafeWeb.Comunicacion.InsertAlumnoRequest inValue = new SafeWeb.Comunicacion.InsertAlumnoRequest();
+            inValue.alumnoJson = alumnoJson;
+            SafeWeb.Comunicacion.InsertAlumnoResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).InsertAlumno(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.InsertAlumnoResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.InsertAlumnoAsync(SafeWeb.Comunicacion.InsertAlumnoRequest request) {
+            return base.Channel.InsertAlumnoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.InsertAlumnoResponse> InsertAlumnoAsync(string alumnoJson) {
+            SafeWeb.Comunicacion.InsertAlumnoRequest inValue = new SafeWeb.Comunicacion.InsertAlumnoRequest();
+            inValue.alumnoJson = alumnoJson;
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).InsertAlumnoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.ReadCursoByIdPlanResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadCursoByIdPlan(SafeWeb.Comunicacion.ReadCursoByIdPlanRequest request) {
+            return base.Channel.ReadCursoByIdPlan(request);
+        }
+        
+        public string ReadCursoByIdPlan(int idPlanCapacitacion) {
+            SafeWeb.Comunicacion.ReadCursoByIdPlanRequest inValue = new SafeWeb.Comunicacion.ReadCursoByIdPlanRequest();
+            inValue.idPlanCapacitacion = idPlanCapacitacion;
+            SafeWeb.Comunicacion.ReadCursoByIdPlanResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadCursoByIdPlan(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadCursoByIdPlanResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadCursoByIdPlanAsync(SafeWeb.Comunicacion.ReadCursoByIdPlanRequest request) {
+            return base.Channel.ReadCursoByIdPlanAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadCursoByIdPlanResponse> ReadCursoByIdPlanAsync(int idPlanCapacitacion) {
+            SafeWeb.Comunicacion.ReadCursoByIdPlanRequest inValue = new SafeWeb.Comunicacion.ReadCursoByIdPlanRequest();
+            inValue.idPlanCapacitacion = idPlanCapacitacion;
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadCursoByIdPlanAsync(inValue);
+        }
+        
+        public int DeleteEmpleado(int rutEmpleado) {
+            return base.Channel.DeleteEmpleado(rutEmpleado);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteEmpleadoAsync(int rutEmpleado) {
+            return base.Channel.DeleteEmpleadoAsync(rutEmpleado);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.ReadEmpresaByIdCuentaUsuarioResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadEmpresaByIdCuentaUsuario(SafeWeb.Comunicacion.ReadEmpresaByIdCuentaUsuarioRequest request) {
+            return base.Channel.ReadEmpresaByIdCuentaUsuario(request);
+        }
+        
+        public string ReadEmpresaByIdCuentaUsuario(int idCuentaUsuario) {
+            SafeWeb.Comunicacion.ReadEmpresaByIdCuentaUsuarioRequest inValue = new SafeWeb.Comunicacion.ReadEmpresaByIdCuentaUsuarioRequest();
+            inValue.idCuentaUsuario = idCuentaUsuario;
+            SafeWeb.Comunicacion.ReadEmpresaByIdCuentaUsuarioResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadEmpresaByIdCuentaUsuario(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadEmpresaByIdCuentaUsuarioResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadEmpresaByIdCuentaUsuarioAsync(SafeWeb.Comunicacion.ReadEmpresaByIdCuentaUsuarioRequest request) {
+            return base.Channel.ReadEmpresaByIdCuentaUsuarioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadEmpresaByIdCuentaUsuarioResponse> ReadEmpresaByIdCuentaUsuarioAsync(int idCuentaUsuario) {
+            SafeWeb.Comunicacion.ReadEmpresaByIdCuentaUsuarioRequest inValue = new SafeWeb.Comunicacion.ReadEmpresaByIdCuentaUsuarioRequest();
+            inValue.idCuentaUsuario = idCuentaUsuario;
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadEmpresaByIdCuentaUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.UpdateEmpleadoResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.UpdateEmpleado(SafeWeb.Comunicacion.UpdateEmpleadoRequest request) {
+            return base.Channel.UpdateEmpleado(request);
+        }
+        
+        public int UpdateEmpleado(string empleadoJson) {
+            SafeWeb.Comunicacion.UpdateEmpleadoRequest inValue = new SafeWeb.Comunicacion.UpdateEmpleadoRequest();
+            inValue.empleadoJson = empleadoJson;
+            SafeWeb.Comunicacion.UpdateEmpleadoResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).UpdateEmpleado(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.UpdateEmpleadoResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.UpdateEmpleadoAsync(SafeWeb.Comunicacion.UpdateEmpleadoRequest request) {
+            return base.Channel.UpdateEmpleadoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.UpdateEmpleadoResponse> UpdateEmpleadoAsync(string empleadoJson) {
+            SafeWeb.Comunicacion.UpdateEmpleadoRequest inValue = new SafeWeb.Comunicacion.UpdateEmpleadoRequest();
+            inValue.empleadoJson = empleadoJson;
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).UpdateEmpleadoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.ReadEmpleadoByEmpresaResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadEmpleadoByEmpresa(SafeWeb.Comunicacion.ReadEmpleadoByEmpresaRequest request) {
+            return base.Channel.ReadEmpleadoByEmpresa(request);
+        }
+        
+        public string ReadEmpleadoByEmpresa(int rutEmpresa) {
+            SafeWeb.Comunicacion.ReadEmpleadoByEmpresaRequest inValue = new SafeWeb.Comunicacion.ReadEmpleadoByEmpresaRequest();
+            inValue.rutEmpresa = rutEmpresa;
+            SafeWeb.Comunicacion.ReadEmpleadoByEmpresaResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadEmpleadoByEmpresa(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadEmpleadoByEmpresaResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadEmpleadoByEmpresaAsync(SafeWeb.Comunicacion.ReadEmpleadoByEmpresaRequest request) {
+            return base.Channel.ReadEmpleadoByEmpresaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadEmpleadoByEmpresaResponse> ReadEmpleadoByEmpresaAsync(int rutEmpresa) {
+            SafeWeb.Comunicacion.ReadEmpleadoByEmpresaRequest inValue = new SafeWeb.Comunicacion.ReadEmpleadoByEmpresaRequest();
+            inValue.rutEmpresa = rutEmpresa;
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadEmpleadoByEmpresaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.ReadComunasResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadComunas(SafeWeb.Comunicacion.ReadComunasRequest request) {
+            return base.Channel.ReadComunas(request);
+        }
+        
+        public string ReadComunas(int idProvincia) {
+            SafeWeb.Comunicacion.ReadComunasRequest inValue = new SafeWeb.Comunicacion.ReadComunasRequest();
+            inValue.idProvincia = idProvincia;
+            SafeWeb.Comunicacion.ReadComunasResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadComunas(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadComunasResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadComunasAsync(SafeWeb.Comunicacion.ReadComunasRequest request) {
+            return base.Channel.ReadComunasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadComunasResponse> ReadComunasAsync(int idProvincia) {
+            SafeWeb.Comunicacion.ReadComunasRequest inValue = new SafeWeb.Comunicacion.ReadComunasRequest();
+            inValue.idProvincia = idProvincia;
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadComunasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SafeWeb.Comunicacion.InsertCuentaUsuarioResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.InsertCuentaUsuario(SafeWeb.Comunicacion.InsertCuentaUsuarioRequest request) {
             return base.Channel.InsertCuentaUsuario(request);
         }
         
-        public bool InsertCuentaUsuario(string usuarioJson) {
+        public int InsertCuentaUsuario(string usuarioJson) {
             SafeWeb.Comunicacion.InsertCuentaUsuarioRequest inValue = new SafeWeb.Comunicacion.InsertCuentaUsuarioRequest();
             inValue.usuarioJson = usuarioJson;
             SafeWeb.Comunicacion.InsertCuentaUsuarioResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).InsertCuentaUsuario(inValue);
@@ -296,6 +1400,94 @@ namespace SafeWeb.Comunicacion {
             SafeWeb.Comunicacion.ValidarUsuarioRequest inValue = new SafeWeb.Comunicacion.ValidarUsuarioRequest();
             inValue.usuarioJson = usuarioJson;
             return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ValidarUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.InsertCursoResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.InsertCurso(SafeWeb.Comunicacion.InsertCursoRequest request) {
+            return base.Channel.InsertCurso(request);
+        }
+        
+        public int InsertCurso(string cursoJson) {
+            SafeWeb.Comunicacion.InsertCursoRequest inValue = new SafeWeb.Comunicacion.InsertCursoRequest();
+            inValue.cursoJson = cursoJson;
+            SafeWeb.Comunicacion.InsertCursoResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).InsertCurso(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.InsertCursoResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.InsertCursoAsync(SafeWeb.Comunicacion.InsertCursoRequest request) {
+            return base.Channel.InsertCursoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.InsertCursoResponse> InsertCursoAsync(string cursoJson) {
+            SafeWeb.Comunicacion.InsertCursoRequest inValue = new SafeWeb.Comunicacion.InsertCursoRequest();
+            inValue.cursoJson = cursoJson;
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).InsertCursoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.ReadPlanByRutEmpresaResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadPlanByRutEmpresa(SafeWeb.Comunicacion.ReadPlanByRutEmpresaRequest request) {
+            return base.Channel.ReadPlanByRutEmpresa(request);
+        }
+        
+        public string ReadPlanByRutEmpresa(int rutEmpresa) {
+            SafeWeb.Comunicacion.ReadPlanByRutEmpresaRequest inValue = new SafeWeb.Comunicacion.ReadPlanByRutEmpresaRequest();
+            inValue.rutEmpresa = rutEmpresa;
+            SafeWeb.Comunicacion.ReadPlanByRutEmpresaResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadPlanByRutEmpresa(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadPlanByRutEmpresaResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadPlanByRutEmpresaAsync(SafeWeb.Comunicacion.ReadPlanByRutEmpresaRequest request) {
+            return base.Channel.ReadPlanByRutEmpresaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadPlanByRutEmpresaResponse> ReadPlanByRutEmpresaAsync(int rutEmpresa) {
+            SafeWeb.Comunicacion.ReadPlanByRutEmpresaRequest inValue = new SafeWeb.Comunicacion.ReadPlanByRutEmpresaRequest();
+            inValue.rutEmpresa = rutEmpresa;
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadPlanByRutEmpresaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.ReadRolesResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadRoles(SafeWeb.Comunicacion.ReadRolesRequest request) {
+            return base.Channel.ReadRoles(request);
+        }
+        
+        public string ReadRoles() {
+            SafeWeb.Comunicacion.ReadRolesRequest inValue = new SafeWeb.Comunicacion.ReadRolesRequest();
+            SafeWeb.Comunicacion.ReadRolesResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadRoles(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadRolesResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadRolesAsync(SafeWeb.Comunicacion.ReadRolesRequest request) {
+            return base.Channel.ReadRolesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadRolesResponse> ReadRolesAsync() {
+            SafeWeb.Comunicacion.ReadRolesRequest inValue = new SafeWeb.Comunicacion.ReadRolesRequest();
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadRolesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SafeWeb.Comunicacion.ReadRegionesResponse SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadRegiones(SafeWeb.Comunicacion.ReadRegionesRequest request) {
+            return base.Channel.ReadRegiones(request);
+        }
+        
+        public string ReadRegiones() {
+            SafeWeb.Comunicacion.ReadRegionesRequest inValue = new SafeWeb.Comunicacion.ReadRegionesRequest();
+            SafeWeb.Comunicacion.ReadRegionesResponse retVal = ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadRegiones(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadRegionesResponse> SafeWeb.Comunicacion.ServicioComunicacionPortType.ReadRegionesAsync(SafeWeb.Comunicacion.ReadRegionesRequest request) {
+            return base.Channel.ReadRegionesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SafeWeb.Comunicacion.ReadRegionesResponse> ReadRegionesAsync() {
+            SafeWeb.Comunicacion.ReadRegionesRequest inValue = new SafeWeb.Comunicacion.ReadRegionesRequest();
+            return ((SafeWeb.Comunicacion.ServicioComunicacionPortType)(this)).ReadRegionesAsync(inValue);
         }
     }
 }

@@ -7,27 +7,27 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SafeWeb.Administrador {
+namespace SafeWeb.Empresa {
     
     
-    public partial class InicioAdministrador {
+    public partial class AgregarEmpleados {
         
         /// <summary>
-        /// Control InicioAdmin.
+        /// Control grdEmpleados.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel InicioAdmin;
+        protected global::System.Web.UI.WebControls.GridView grdEmpleados;
         
         /// <summary>
-        /// Control RegistroCU.
+        /// Control fuExcel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton RegistroCU;
+        protected global::System.Web.UI.WebControls.FileUpload fuExcel;
     }
 }

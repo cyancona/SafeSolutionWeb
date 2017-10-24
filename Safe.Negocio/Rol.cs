@@ -8,9 +8,9 @@ namespace Safe.Negocio
 {
     public class Rol
     {
-        public int IdRol { get; set; }
-        public string NombreRol { get; set; }
-        public string DescRol { get; set; }
+        public int id_rol { get; set; }
+        public string nombre_rol { get; set; }
+        public string descripcion { get; set; }
 
         public Rol()
         {
@@ -19,9 +19,9 @@ namespace Safe.Negocio
 
         private void Init()
         {
-            this.IdRol = 0;
-            this.NombreRol = string.Empty;
-            this.DescRol = string.Empty;
+            this.id_rol = 0;
+            this.nombre_rol = string.Empty;
+            this.descripcion = string.Empty;
         }
 
         public string Serializar()
@@ -32,6 +32,11 @@ namespace Safe.Negocio
         public static Rol Deserializar(string json)
         {
             return (Rol)ClaseComun.Deserializar<Rol>(json);
+        }
+
+        public override string ToString()
+        {
+            return nombre_rol;
         }
     }
 

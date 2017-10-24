@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -105,7 +106,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Administrador\InicioAdministrador.aspx" />
+    <Content Include="Administrador\RegistroCntaUs.aspx" />
     <Content Include="Administrador\RegistroUs.aspx" />
+    <Content Include="Empresa\AgregarEmpleados.aspx" />
+    <Content Include="Empresa\InicioEmpresa.aspx" />
     <Content Include="Images\Logout-icon.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -133,8 +137,59 @@
     <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.ValidarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\Comunicacion\ServicioComunicacion.wsdl" />
     <Content Include="Trabajador\MasterTrab.Master" />
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.InsertAlumnoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.InsertEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.ReadRegionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.ReadRolesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.ReadComunasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.ReadProvinciasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.InsertCursoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.InsertEmpleadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.InsertPlanCapacitacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.ReadCuentaUsuarioByRolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.ReadCursoByIdPlanResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.ReadEmpleadoByEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.ReadEmpresaByIdCuentaUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.ReadPlanByRutEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.UpdateCursoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.UpdateEmpleadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Comunicacion\SafeWeb.Comunicacion.UpdateEmpresaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\Comunicacion\ServicioComunicacion1.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -155,13 +210,14 @@
     <Content Include="Images\upFile.png" />
     <Content Include="Inicio\Inicio.aspx" />
     <Content Include="Inicio\Login.aspx" />
-    <Content Include="Administrador\RegistroEmp.aspx" />
     <Content Include="Medico\MedCalendario.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Tecnico\EvaluacionPersonal.aspx" />
     <Content Include="Tecnico\EvaluacionTerreno.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrador\InicioAdministrador.aspx.cs">
@@ -177,6 +233,13 @@
     </Compile>
     <Compile Include="Administrador\MasterAdm.Master.designer.cs">
       <DependentUpon>MasterAdm.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\RegistroCntaUs.aspx.cs">
+      <DependentUpon>RegistroCntaUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\RegistroCntaUs.aspx.designer.cs">
+      <DependentUpon>RegistroCntaUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administrador\RegistroUs.aspx.cs">
       <DependentUpon>RegistroUs.aspx</DependentUpon>
@@ -194,6 +257,20 @@
     </Compile>
     <Compile Include="ClaseComun\Redireccion.cs" />
     <Compile Include="ClaseComun\SessionHelper.cs" />
+    <Compile Include="Empresa\AgregarEmpleados.aspx.cs">
+      <DependentUpon>AgregarEmpleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empresa\AgregarEmpleados.aspx.designer.cs">
+      <DependentUpon>AgregarEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\InicioEmpresa.aspx.cs">
+      <DependentUpon>InicioEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empresa\InicioEmpresa.aspx.designer.cs">
+      <DependentUpon>InicioEmpresa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Empresa\MasterEmp.Master.cs">
       <DependentUpon>MasterEmp.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -228,13 +305,6 @@
     </Compile>
     <Compile Include="Inicio\MasterIn.Master.designer.cs">
       <DependentUpon>MasterIn.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Administrador\RegistroEmp.aspx.cs">
-      <DependentUpon>RegistroEmp.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administrador\RegistroEmp.aspx.designer.cs">
-      <DependentUpon>RegistroEmp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Medico\MasterMed.Master.cs">
       <DependentUpon>MasterMed.Master</DependentUpon>
@@ -299,6 +369,35 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\Comunicacion\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -7,27 +7,27 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SafeWeb.Administrador {
+namespace SafeWeb.Empresa {
     
     
-    public partial class InicioAdministrador {
+    public partial class InicioEmpresa {
         
         /// <summary>
-        /// Control InicioAdmin.
+        /// Control panInfo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel InicioAdmin;
+        protected global::System.Web.UI.WebControls.Panel panInfo;
         
         /// <summary>
-        /// Control RegistroCU.
+        /// Control panMenu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton RegistroCU;
+        protected global::System.Web.UI.WebControls.Panel panMenu;
     }
 }

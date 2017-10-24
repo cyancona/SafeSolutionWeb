@@ -13,6 +13,7 @@ namespace Safe.Negocio
         public string NombreAlumno { get; set; }
         public string PaternoAlumno { get; set; }
         public string MaternoAlumno { get; set; }
+        public CuentaUsuario Cuenta { get; set; }
 
         public Alumno()
         {
@@ -26,6 +27,7 @@ namespace Safe.Negocio
             this.NombreAlumno = string.Empty;
             this.PaternoAlumno = string.Empty;
             this.MaternoAlumno = string.Empty;
+            this.Cuenta = new CuentaUsuario();
         }
 
         public string Serializar()
